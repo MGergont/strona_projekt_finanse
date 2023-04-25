@@ -1,0 +1,1 @@
+# strona_projekt_finanse
