@@ -2,5 +2,5 @@
     $host="localhost";
     $db_user="root";
     $db_password="";
-    $db_name="";
+    $db_name="wydatki_v.1.0";
 ?>

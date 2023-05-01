@@ -4,6 +4,6 @@ session_start();
 
 session_unset();
 
-header('Location:../podstrony/login.php');
+header('Location:');
 
 ?>
