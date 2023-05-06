@@ -32,7 +32,7 @@
             {
 
                 //Czy nic jest juz zarezerwowany
-                $rezultat = $connect->query("SELECT id FROM users WHERE name='$nick'");
+                $rezultat = $connect->query("SELECT id_users FROM users WHERE name='$nick'");
                     
                 if (!$rezultat) throw new Exception($connect->error);
                 
@@ -48,7 +48,7 @@
                     if ($connect->query("INSERT INTO users VALUES (NULL, '$nick', '$haslo_hash')"))
 					{
 						$_SESSION['udanarejestracja']=true;
-						header('Location:test.php');
+						header('Location:./podstrony/dodawanie.html');
 					}
 					else
 					{

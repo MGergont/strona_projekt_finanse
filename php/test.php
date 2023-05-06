@@ -1,4 +1,18 @@
+<?php 
 
+session_start();
+	
+if (!isset($_SESSION['zalogowany']))
+{
+    header('Location:../index.html');
+    exit();
+}
+
+function add_cost_fun() {
+    
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -9,6 +23,8 @@
     <title>test</title>
 </head>
 <body>
-    Udało się
+    <?php
+        echo '<div class="daneuserphp">'.$_SESSION['user'].'</div>';
+    ?>
 </body>
 </html>

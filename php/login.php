@@ -39,13 +39,10 @@
                 if(password_verify($haslo, $wiersz['password_user']))
                 {
                     $_SESSION['zalogowany'] = true;
-                    $_SESSION['id']=$wiersz['id'];
-                    $_SESSION['user']=$wiersz['name'];
-                    $_SESSION['passw']=$wiersz['password_user'];
-
 
                     unset($_SESSION['blad']);
                     $rezultat->free_result();
+                    // header('Location:../podstrony/dodawanie.html');
                     header('Location:test.php');
                 }
                 else{
