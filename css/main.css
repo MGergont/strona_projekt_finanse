@@ -12,3 +12,16 @@ font-family: 'Roboto', sans-serif;
 html {
     font-family: 'Roboto', sans-serif;
 }
+
+body {
+    min-height: 100vh;
+}
+
+.fixed {
+    position: fixed;
+    height: 100%;
+}
+
+
+
+/* width --- 320 - 360 - 411 - 768 - 1024 - 1440 - 1920 */

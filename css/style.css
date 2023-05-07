@@ -16,15 +16,15 @@ html {
 body {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 div.wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    margin-top: 100px;
+    width: 300px;
+    padding: 20px;
 }
 
 .wrap img {
@@ -37,7 +37,7 @@ div.wrap {
     flex-direction: column;
     justify-content: space-between;
     min-height: 170px;
-    width: 250px;
+    width: 220px;
 }
 
 .wrap form input {
@@ -54,20 +54,116 @@ div.wrap {
     font-size: 18px;
 }
 
+.wrap form button:active {
+    background-color: #7359bb;
+}
+
 .wrap p {
-    display: inline-block;
     align-self: end;
-    padding-right: 70px;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 16px;
 }
 
-
 .wrap a {
     text-decoration: none;
-    display: inline-block;
     align-self: end;
-    padding-right: 70px;
     margin-top: 10px;
     font-size: 18px;
+    color: #524180;
 }
+
+@media screen and (min-width: 360px) {
+    div.wrap {
+        width: 330px;
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 411px) {
+
+    div.wrap {
+        width: 350px;
+        padding: 30px;
+    }
+
+    .wrap form {
+        min-height: 180px;
+        width: 240px;
+    }
+
+    .wrap form input {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .wrap form button {
+        font-size: 20px;
+    }
+
+    .wrap p {
+        font-size: 18px;
+    }
+
+    .wrap a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    div.wrap {
+        width: 440px;
+        padding: 50px;
+    }
+
+    .wrap form {
+        min-height: 180px;
+        width: 300px;
+    }
+
+    .wrap form input {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .wrap form button {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .wrap p {
+        font-size: 20px;
+    }
+
+    .wrap a {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    div.wrap {
+        width: 460px;
+        padding: 50px;
+    }
+
+    .wrap form button {
+        transition: .3s;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    div.wrap {
+        margin-top: 100px;
+        width: 500px;
+    }
+
+    .wrap p {
+        padding-right: 50px;
+    }
+
+    .wrap a {
+        padding-right: 50px;
+    }
+}
+
+/* width --- 320 - 360 - 411 - 768 - 1024 - 1440 - 1920 */
