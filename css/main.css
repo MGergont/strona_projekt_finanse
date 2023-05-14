@@ -4,8 +4,8 @@ font-family: 'Roboto', sans-serif;
 */
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -14,14 +14,216 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-.fixed {
+.burger {
     position: fixed;
-    height: 100%;
+    top: 5%;
+    right: 10%;
+    z-index: 1;
+    font-size: 26px;
+    color: black;
 }
 
+/* -------------- MENU - NAWIGACJA ----------- */
+.fixed {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(5px);
+}
+
+.fixed.on {
+    right: 0;
+}
+
+.fixed .logo {
+    padding: 80px 20px 20px;
+}
+
+.fixed .logo img {
+    width: 100%;
+}
+
+.fixed nav {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.fixed nav ul {
+    list-style: none;
+}
+
+.fixed nav ul li {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* .fixed nav ul li:hover a {
+    border-bottom: 1px solid black;
+} */
+
+.fixed nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: black;
+
+}
+
+.fixed .settings {
+    display: flex;
+    width: 100%;
+}
+
+.fixed .settings .weatherApp {
+    background-color: royalblue;
+    height: 100px;
+    width: 50%;
+}
+
+.fixed .settings .theme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.fixed .settings .theme i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.fixed .settings .theme a {
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* --------- HEADER ------------ */
+
+.title {
+    padding: 25px 30px 15px;
+}
+
+.title h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* ------------ WYDATKI -------------- */
+
+.wydatki {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px 15px;
+    flex-grow: 1;
+}
+
+.wydatki div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.333%;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.wydatki .kwota {
+    width: 100%;
+}
+
+.wydatki .kwota p {
+    font-size: 28px;
+}
+
+.wydatki div i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.wydatki div p {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/* ------------ MODAL WYDATKI -------------- */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(5px);
+}
+
+.modal .fa-xmark {
+    position: absolute;
+    font-size: 34px;
+    top: 20%;
+    right: 15%;
+}
+
+.modal p {
+    font-size: 32px;
+}
+
+.modal .modal_icon {
+    font-size: 36px;
+    padding: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal form input {
+    padding: 5px;
+    font-size: 16px;
+
+}
+
+.modal form button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #524180;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: none;
+    border-radius: 215px;
+}
+
+
+
+/* ------------ PRZYCHODY -------------- */
 
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1440 - 1920 */

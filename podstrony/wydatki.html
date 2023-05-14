@@ -25,71 +25,93 @@
     </div>
 
     <section class="fixed">
-
         <div class="logo">
             <img src="../img/logo_2.png" alt="logo - Home Finances">
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Wydatek</a></li>
-                <li><a href="#">Przychód</a></li>
-                <li><a href="#">Raport</a></li>
+                <li><a href="wydatki.html">Wydatek</a></li>
+                <li><a href="przychod.html">Przychód</a></li>
+                <li><a href="raport.html">Raport</a></li>
             </ul>
         </nav>
 
-        <div class="weatherApp">
+        <section class="settings">
 
-        </div>
+            <div class="weatherApp">
+            </div>
 
-        <div class="settings">
-            <i class="fa-solid fa-sun"></i>
-            <i class="fa-solid fa-moon"></i>
-            <a href="#">Wyloguj</a>
-        </div>
+            <div class="theme">
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+                <a href="#">Wyloguj</a>
+            </div>
+
+        </section>
     </section>
 
-    <header class="titlePage">
-        <h2>rejestracja wydaktów</h2>
+    <div class="modal">
+        <i class="fa-solid fa-xmark"></i>
+        <p></p>
+        <i class="modal_icon"></i>
+        <form>
+            <input type="text" placeholder="KWOTA">
+            <button>Dodaj</button>
+        </form>
+    </div>
+
+    <header class="title">
+        <h2>wydatki</h2>
     </header>
 
     <section class="wydatki">
-
-        <div>
-            <p>test1</p>
+        <div class="category">
+            <i class="fa-solid fa-utensils"></i>
+            <p>Żywność</p>
         </div>
-        <div>
-            <p>test2</p>
+        <div class="category">
+            <i class="fa-solid fa-house-chimney"></i>
+            <p>Mieszkanie</p>
         </div>
-        <div>
-            <p>test3</p>
+        <div class="category">
+            <i class="fa-solid fa-car-side"></i>
+            <p>Transport</p>
         </div>
-        <div>
-            <p>test4</p>
+        <div class="category">
+            <i class="fa-solid fa-shirt"></i>
+            <p>Odzież i obuwie</p>
         </div>
-        <div>
-            <p>test5</p>
+        <div class="category">
+            <i class="fa-solid fa-gift"></i>
+            <p>Prezenty</p>
         </div>
-        <div>
-            <p>KWOTA</p>
+        <div class="kwota">
+            <p>3333 <span>PLN</span> </p>
         </div>
-        <div>
-            <p>test7</p>
+        <div class="category">
+            <i class="fa-solid fa-book-open"></i>
+            <p>Rozwój osobisty</p>
         </div>
-        <div>
-            <p>test8</p>
+        <div class="category">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p>Zdrowie i uroda</p>
         </div>
-        <div>
-            <p>test9</p>
+        <div class="category">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <p>Rozrywka i hobby</p>
         </div>
-        <div>
-            <p>test10</p>
+        <div class="category">
+            <i class="fa-solid fa-microchip"></i>
+            <p>Technologia</p>
         </div>
-        <div>
-            <p>test11</p>
+        <div class="category">
+            <i class="fa-solid fa-ellipsis"></i>
+            <p>Inne</p>
         </div>
     </section>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
