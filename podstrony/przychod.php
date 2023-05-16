@@ -1,3 +1,23 @@
+<?php 
+require_once "../php/engine.php";
+session_start();
+	
+if (!isset($_SESSION['zalogowany']))
+{
+    header('Location:../index.html');
+    exit();
+}
+
+if(isset($_POST['add_cost'])){
+    if (!empty($_POST['add_cost'])) { 
+          add_cost($_POST['add_cost']);
+          unset($_POST['add_cost']);
+      }
+      else{
+          echo "pusty";
+      }  
+  }
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -31,9 +51,9 @@
 
         <nav>
             <ul>
-                <li><a href="wydatki.html">Wydatek</a></li>
-                <li><a href="przychod.html">Przychód</a></li>
-                <li><a href="raport.html">Raport</a></li>
+                <li><a href="wydatki.php">Wydatek</a></li>
+                <li><a href="przychod.php">Przychód</a></li>
+                <li><a href="raport.php">Raport</a></li>
             </ul>
         </nav>
 
@@ -45,17 +65,36 @@
             <div class="theme">
                 <i class="fa-solid fa-sun"></i>
                 <i class="fa-solid fa-moon"></i>
-                <a href="#">Wyloguj</a>
+                <a href="../php/logout.php">Wyloguj</a>
             </div>
 
         </section>
     </section>
 
     <header class="title">
-        <h2>raport</h2>
+        <h2>przychody</h2>
     </header>
 
+    <form action="test.php" method="post">
+        <input type="number" name="add_cost">
+        <input type="submit">
+    </form>
+    <form action="test.php" method="post">
+        <select name="getListahtml" id="getListahtml">
+            <option value="1">1</option>
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        <input type="submit">
+    </form>
+    <?php
+        getList($_POST['getListahtml']);
+    ?>
+
+
     <section class="">
+
     </section>
 
     <script src="../js/script.js"></script>

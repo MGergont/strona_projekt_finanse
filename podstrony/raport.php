@@ -1,3 +1,13 @@
+<?php
+session_start();
+	
+if (!isset($_SESSION['zalogowany']))
+{
+    header('Location:../index.html');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -31,9 +41,9 @@
 
         <nav>
             <ul>
-                <li><a href="wydatki.html">Wydatek</a></li>
-                <li><a href="przychod.html">Przychód</a></li>
-                <li><a href="raport.html">Raport</a></li>
+                <li><a href="wydatki.php">Wydatek</a></li>
+                <li><a href="przychod.php">Przychód</a></li>
+                <li><a href="raport.php">Raport</a></li>
             </ul>
         </nav>
 
@@ -45,14 +55,14 @@
             <div class="theme">
                 <i class="fa-solid fa-sun"></i>
                 <i class="fa-solid fa-moon"></i>
-                <a href="#">Wyloguj</a>
+                <a href="../php/logout.php">Wyloguj</a>
             </div>
 
         </section>
     </section>
 
     <header class="title">
-        <h2>przychody</h2>
+        <h2>raport</h2>
     </header>
 
     <section class="">

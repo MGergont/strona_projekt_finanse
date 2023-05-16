@@ -43,7 +43,7 @@
                     unset($_SESSION['blad']);
                     $rezultat->free_result();
                     // header('Location:../podstrony/dodawanie.html');
-                    header('Location:test.php');
+                    header('Location:../podstrony/wydatki.php');
                 }
                 else{
 
