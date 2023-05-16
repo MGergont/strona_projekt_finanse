@@ -79,7 +79,7 @@ if(isset($_POST['add_cost'])){
         <input type="number" name="add_cost">
         <input type="submit">
     </form>
-    <form action="test.php" method="post">
+    <form action="przychod.php" method="post">
         <select name="getListahtml" id="getListahtml">
             <option value="1">1</option>
             <option value="5" selected>5</option>
@@ -89,7 +89,20 @@ if(isset($_POST['add_cost'])){
         <input type="submit">
     </form>
     <?php
-        getList($_POST['getListahtml']);
+
+    if(isset($_POST['getListahtml'])){
+        if (!empty($_POST['getListahtml'])) {
+             
+            $wynik3 = getList($_POST['getListahtml']);
+
+            while($row2 = mysqli_fetch_array($wynik3)){
+            echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
+            }
+        }
+        else{
+            echo "pusty";
+        }  
+    }
     ?>
 
 

@@ -36,12 +36,9 @@ function getList($zakres)
     $data = date("Y-m-d H:i:s", strtotime("-".$zakres." days"));
 
     $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE data_time > "'.$data.'";') or die("Problemy z odczytem danych!");
-
-    while($row = mysqli_fetch_array($wynik1)){
-        echo $row['kwota']." ".$row['data_time']." ".$row['notatka']."<br>";
-    }
-
-    mysqli_close(polonczenie_mysql());
+    
+    return $wynik1;
+    // mysqli_close(polonczenie_mysql());
 }
 
 
