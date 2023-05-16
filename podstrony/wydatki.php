@@ -79,46 +79,46 @@ if (!isset($_SESSION['zalogowany']))
     <section class="wydatki">
         <div class="category">
             <i class="fa-solid fa-utensils"></i>
-            <p>Żywność</p>
+            <p id = "1">Żywność</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-house-chimney"></i>
-            <p>Mieszkanie</p>
+            <p id = "2">Mieszkanie</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-car-side"></i>
-            <p>Transport</p>
+            <p id = "3">Transport</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-shirt"></i>
-            <p>Odzież i obuwie</p>
+            <p id = "4">Odzież i obuwie</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-gift"></i>
-            <p>Prezenty</p>
+            <p id = "5">Prezenty</p>
         </div>
         <div class="kwota">
             <p>3333 <span>PLN</span> </p>
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>
-            <p>Rozwój osobisty</p>
+            <p id = "6">Rozwój osobisty</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-hand-holding-heart"></i>
-            <p>Zdrowie i uroda</p>
+            <p id = "7">Zdrowie i uroda</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-puzzle-piece"></i>
-            <p>Rozrywka i hobby</p>
+            <p id = "8">Rozrywka i hobby</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-microchip"></i>
-            <p>Technologia</p>
+            <p id = "9">Technologia</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-ellipsis"></i>
-            <p>Inne</p>
+            <p id = "10">Inne</p>
         </div>
     </section>
 

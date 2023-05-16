@@ -6,6 +6,7 @@ const modal = document.querySelector(".modal");
 const modalP = document.querySelector(".modal p");
 const modalI = document.querySelector(".modal i.modal_icon");
 const modalX = document.querySelector(".modal .fa-xmark");
+const inputModal = document.querySelector(".modal form input");
 
 // wysuwanie się menu
 burger.addEventListener('click', () => {
@@ -22,7 +23,9 @@ category.forEach(item => item.addEventListener('click', () => {
     modalP.textContent = p.textContent;
     modalI.className = "modal_icon" + " " + i.className;
 
-    burger.style.display = "none"
+    burger.style.display = "none";
+
+    inputModal.name = p.id;
 
 }))
 
@@ -34,4 +37,5 @@ modalX.addEventListener('click', () => {
     modalI.className = "modal_icon";
     burger.style.display = "block"
 
+    inputModal.name = "";
 })
