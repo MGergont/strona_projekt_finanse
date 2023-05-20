@@ -1,6 +1,5 @@
 <?php 
 require_once "../php/engine.php";
-session_start();
 	
 if (!isset($_SESSION['zalogowany']))
 {
@@ -75,7 +74,7 @@ if(isset($_POST['add_cost'])){
         <h2>przychody</h2>
     </header>
 
-    <form action="test.php" method="post">
+    <form action="przychod.php" method="post">
         <input type="number" name="add_cost">
         <input type="submit">
     </form>

@@ -34,11 +34,11 @@
             {   
                 $wiersz=$rezultat->fetch_assoc();
 
-                echo $wiersz['password_user'];
-
                 if(password_verify($haslo, $wiersz['password_user']))
                 {
                     $_SESSION['zalogowany'] = true;
+                    
+                    $_SESSION['user_id'] = $wiersz['id_users'];
 
                     unset($_SESSION['blad']);
                     $rezultat->free_result();
