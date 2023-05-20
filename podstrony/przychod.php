@@ -1,7 +1,7 @@
-<?php 
+<?php
 require_once "../php/engine.php";
 session_start();
-	
+
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.html');
@@ -9,15 +9,16 @@ if (!isset($_SESSION['zalogowany']))
 }
 
 if(isset($_POST['add_cost'])){
-    if (!empty($_POST['add_cost'])) { 
+    if (!empty($_POST['add_cost'])) {
           add_cost($_POST['add_cost']);
           unset($_POST['add_cost']);
       }
       else{
           echo "pusty";
-      }  
+      }
   }
 ?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -75,38 +76,44 @@ if(isset($_POST['add_cost'])){
         <h2>przychody</h2>
     </header>
 
-    <form action="test.php" method="post">
-        <input type="number" name="add_cost">
-        <input type="submit">
-    </form>
-    <form action="przychod.php" method="post">
-        <select name="getListahtml" id="getListahtml">
-            <option value="1">1</option>
-            <option value="5" selected>5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-        </select>
-        <input type="submit">
-    </form>
-    <?php
 
-    if(isset($_POST['getListahtml'])){
-        if (!empty($_POST['getListahtml'])) {
-             
-            $wynik3 = getList($_POST['getListahtml']);
+    <section class="przychod">
 
-            while($row2 = mysqli_fetch_array($wynik3)){
-            echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
-            }
-        }
-        else{
-            echo "pusty";
-        }  
-    }
-    ?>
+        <div class="dodajPrzychod">
+            <p>miesiąc: <span class="actualMonth">Maj</span></p>
 
+            <form action="test.php" method="post">
+                <input type="number" name="add_cost" placeholder="kwota">
+                <input type="submit" value="Dodaj">
+            </form>
+        </div>
 
-    <section class="">
+        <form action="przychod.php" method="post" class="wyswietlPrzychod">
+            <select name="getListahtml" id="getListahtml">
+                <option value="1">1</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+            <input type="submit">
+        </form>
+
+        <ul>
+            <?php
+
+                if(isset($_POST['getListahtml'])){
+                    if (!empty($_POST['getListahtml'])) {
+                        $wynik3 = getList($_POST['getListahtml']);
+                        while($row2 = mysqli_fetch_array($wynik3)){
+                        echo "<li>".$row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."</li>";
+                        }
+                    }
+                    else{
+                        echo "pusty";
+                    }
+                }
+            ?>
+        </ul>
 
     </section>
 

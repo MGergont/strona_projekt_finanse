@@ -377,6 +377,10 @@ body {
         right: -100%;
     }
 
+    body {
+        padding-left: 350px;
+    }
+
     /* -------------- MENU - NAWIGACJA ----------- */
     .fixed {
         position: fixed;
@@ -406,7 +410,7 @@ body {
     /* --------- HEADER ------------ */
 
     .title {
-        padding: 30px 30px 20px 440px;
+        padding: 50px 0 20px 50px;
     }
 
     .title h2 {
@@ -416,7 +420,7 @@ body {
     /* ------------ WYDATKI -------------- */
 
     .wydatki {
-        padding: 0 20px 20px 350px;
+        padding: 0 20px 20px 20px;
     }
 
     .wydatki div {
@@ -474,6 +478,10 @@ body {
 
 @media screen and (min-width: 1920px) {
 
+    body {
+        padding-left: 400px;
+    }
+
     /* -------------- MENU - NAWIGACJA ----------- */
     .fixed {
         width: 400px;
@@ -488,7 +496,7 @@ body {
     /* --------- HEADER ------------ */
 
     .title {
-        padding: 50px 50px 20px 480px;
+        padding: 60px 30px 20px 80px;
     }
 
     .title h2 {
@@ -498,7 +506,7 @@ body {
     /* ------------ WYDATKI -------------- */
 
     .wydatki {
-        padding: 0 20px 20px 400px;
+        padding: 0 20px 20px 20px;
     }
 
     .wydatki .kwota p {
@@ -530,6 +538,78 @@ body {
 }
 
 /* ------------ PRZYCHODY -------------- */
+
+.przychod {
+    padding: 10px 20px 20px;
+}
+
+.dodajPrzychod {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 2px solid;
+}
+
+.dodajPrzychod p {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.dodajPrzychod form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dodajPrzychod form input:nth-of-type(1) {
+    align-self: flex-start;
+    padding: 3px 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.dodajPrzychod form input:nth-of-type(2) {
+    padding: 7px 25px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #524180;
+    color: #eee;
+    font-size: 18px;
+}
+
+.wyswietlPrzychod {
+    padding: 20px 20px 10px;
+    text-align: center;
+}
+
+.wyswietlPrzychod select {
+    font-size: 16px;
+    padding: 3px 2px;
+    margin-right: 20px;
+}
+
+.wyswietlPrzychod input {
+    font-size: 16px;
+    padding: 5px 20px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #524180;
+    color: #eee;
+}
+
+.przychod ul {
+    padding: 10px;
+    list-style: none;
+}
+
+.przychod ul li {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid;
+}
+
+/* ------------ PRZYCHODY_MEDIA_Q -------------- */
 
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
