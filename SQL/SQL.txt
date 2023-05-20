@@ -1,0 +1,7 @@
+CREATE TABLE `dane` ( `id_dane` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, `kwota` float DEFAULT NULL, `data_time` datetime DEFAULT NULL, `notatka` text DEFAULT NULL, `id_kategoria` int(11) DEFAULT NULL, `id_users` int(11) DEFAULT NULL, CONSTRAINT `dane_ibfk_1` FOREIGN KEY (`id_kategoria`) REFERENCES `kategoria` (`id_kategoria`), CONSTRAINT `kategoria_ibfk_1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id_users`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+
+CREATE TABLE `kategoria` ( `id_kategoria` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, `nazwa_kat` varchar(30) DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+
+CREATE TABLE `users` ( `id_users` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, `name` varchar(20) DEFAULT NULL, `password_user` varchar(100) DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;

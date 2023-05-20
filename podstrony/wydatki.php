@@ -1,11 +1,13 @@
 <?php
-session_start();
+
+require_once "../php/engine.php";
 	
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.html');
     exit();
 }
+
 ?>
 
 
@@ -66,8 +68,8 @@ if (!isset($_SESSION['zalogowany']))
         <i class="fa-solid fa-xmark"></i>
         <p></p>
         <i class="modal_icon"></i>
-        <form>
-            <input type="text" placeholder="KWOTA">
+        <form action="../php/wydatki_rejestr.php" method="post">
+            <input type="number" placeholder="KWOTA">
             <button>Dodaj</button>
         </form>
     </div>
@@ -98,7 +100,7 @@ if (!isset($_SESSION['zalogowany']))
             <p id = "5">Prezenty</p>
         </div>
         <div class="kwota">
-            <p>3333 <span>PLN</span> </p>
+            <p><?php echo getSaldo(); ?> <span>PLN</span> </p>
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>

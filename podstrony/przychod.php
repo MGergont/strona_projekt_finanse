@@ -1,7 +1,11 @@
 <?php
 require_once "../php/engine.php";
+<<<<<<< HEAD
 session_start();
 
+=======
+	
+>>>>>>> 9d8046558b603c809f5fdb9fb7b752bc0c02d758
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.html');
@@ -76,6 +80,23 @@ if(isset($_POST['add_cost'])){
         <h2>przychody</h2>
     </header>
 
+<<<<<<< HEAD
+=======
+    <form action="przychod.php" method="post">
+        <input type="number" name="add_cost">
+        <input type="submit">
+    </form>
+    <form action="przychod.php" method="post">
+        <select name="getListahtml" id="getListahtml">
+            <option value="1">1</option>
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        <input type="submit">
+    </form>
+    <?php
+>>>>>>> 9d8046558b603c809f5fdb9fb7b752bc0c02d758
 
     <section class="przychod">
 

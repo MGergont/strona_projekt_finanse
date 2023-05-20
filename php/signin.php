@@ -1,14 +1,21 @@
 <?php
     session_start();
 
-    if (isset($_POST['login1']))
+    echo "jakiś tekst prosze działaj";
+
+    echo $_POST['login_1'];
+
+    if (isset($_POST['login_1']))
 	{
 		//Udana walidacja? Załóżmy, że tak!
 		$wszystko_OK=true;
 		
 		//Sprawdź poprawność nickname'a
-		$nick = $_POST['login1'];
-        $haslo1=$_POST['password1'];
+		$nick = $_POST['login_1'];
+        $haslo1=$_POST['password_1'];
+
+        echo $nick;
+        echo $haslo1;
 
         // szyfrowanie hasla
         $haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
@@ -47,8 +54,9 @@
                     // wszystko jses OK
                     if ($connect->query("INSERT INTO users VALUES (NULL, '$nick', '$haslo_hash')"))
 					{
+                        echo "jakoś sie udoło";
 						$_SESSION['udanarejestracja']=true;
-						header('Location:./podstrony/dodawanie.html');
+						header('Location:../podstrony/dodawanie.php');
 					}
 					else
 					{
