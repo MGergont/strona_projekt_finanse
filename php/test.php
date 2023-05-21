@@ -1,7 +1,19 @@
 <?php
+
+session_start();
 require_once "engine.php";
 
-echo getUserName();
+if(isset($_POST['hasloBefor'])){
+    if (!empty($_POST['hasloBefor'])) {
+        zmianaPass($_POST['hasloAfter'], $_POST['hasloBefor1'], $_POST['hasloBefor2']);
+        unset($_POST['hasloAfter']);
+        unset($_POST['hasloBefor1']);
+        unset($_POST['hasloBefor2']);
+      }
+      else{
+          echo "pusty";
+      }
+  }
 
 ?>
 
@@ -15,10 +27,13 @@ echo getUserName();
 </head>
 <body>
     <form action="test.php" method="post">
-        <input type="text" name="hasloBefor">
-        <input type="text" name="hasloAfter1">
-        <input type="text" name="hasloAfter2">
+        <input type="text" name="hasloAfter">
+        <input type="text" name="hasloBefor1">
+        <input type="text" name="hasloBefor2">
         <button>Zmien</button>
+        <?php
+			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+		?>
     </form>
 </body>
 </html>

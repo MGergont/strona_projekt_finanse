@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 function polonczenie_mysql()
 {
     include "db_login.php";
@@ -93,12 +91,32 @@ function getMiesiac(){
     return $tablica[$miesiac];
 }
 
-// function zmianaPass($haslo1, $haslo2){
+function zmianaPass($haslo1, $haslo2, $haslo3){
+    
+    $user = $_SESSION['user_id'];
+    $wynik=mysqli_query(polonczenie_mysql(),'SELECT password_user FROM users WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+    $wiersz = mysqli_fetch_array($wynik);
+    if(password_verify($haslo1, $wiersz['password_user'])){
+        if(strcasecmp($haslo2, $haslo3)){
 
-//     $user = $_SESSION['user_id'];
-//     $wynik=mysqli_query(polonczenie_mysql(),'SELECT name FROM users WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+            $haslo_hash = password_hash($haslo2, PASSWORD_DEFAULT);
 
-// }
+            mysqli_query(polonczenie_mysql(), 'UPDATE users SET password_user='.$haslo_hash.' WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+            mysqli_close(polonczenie_mysql());
+        }
+        else
+        {
+            $_SESSION['blad']='<span style="color: #cc1b1b;">Hasła nie są takie same!</span>';
+            header('Location:../php/test.php');
+        }
+    }
+    else
+    {
+        $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowe hasło!</span>';
+        header('Location:../php/test.php');
+    }
+
+}
 
 ?>
 

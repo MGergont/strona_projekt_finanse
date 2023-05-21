@@ -1,10 +1,11 @@
 <?php
+session_start();
 
 require_once "../php/engine.php";
 	
 if (!isset($_SESSION['zalogowany']))
 {
-    header('Location:../index.html');
+    header('Location:../index.php');
     exit();
 }
 
