@@ -1,0 +1,9 @@
+statystyki 
+dany miesiąc ilość wydatków 
+procenty
+do limitu
+ 
+
+limity w nowej tablicy 
+
+warning 

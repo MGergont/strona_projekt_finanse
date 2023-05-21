@@ -25,8 +25,7 @@ function add_cost($koszt)
     }
     else
     {
-        echo "błąd czy nie błąd oto jest pytanie";
-        $_SESSION['blad']='<span style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
+        $_SESSION['blad']='<span class="warning2" style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
         header('Location:../podstrony/przychod.php');
     }
 }
@@ -66,7 +65,7 @@ function setCoste($koszt, $kategoria, $notka){
         }
         else
         {
-            $_SESSION['blad']='<span style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
+            $_SESSION['blad']='<span class="warning1" style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
             header('Location:../podstrony/wydatki.php');
         }
 }
