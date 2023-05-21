@@ -70,6 +70,7 @@ if (!isset($_SESSION['zalogowany']))
         <i class="modal_icon"></i>
         <form action="../php/wydatki_rejestr.php" method="post">
             <input type="number" placeholder="KWOTA">
+            <!-- input typu text z name 1t, 2t, 3t,... do notatki -->
             <button>Dodaj</button>
         </form>
     </div>
@@ -101,6 +102,10 @@ if (!isset($_SESSION['zalogowany']))
         </div>
         <div class="kwota">
             <p><?php echo getSaldo(); ?> <span>PLN</span> </p>
+            <?php
+			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+                unset($_SESSION['blad']);
+		    ?>
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>

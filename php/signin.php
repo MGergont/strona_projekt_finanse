@@ -30,8 +30,8 @@
 
         try
         {
-            $connect = new mysqli($host, $db_user, $db_password, $db_name);
-            if ($connect->connect_errno!=0)
+            $connect = @mysqli_connect($host, $db_user, $db_password, $db_name);
+            if (!$connect)
             {
                 throw new Exception(mysqli_connect_errno());
             }
@@ -39,11 +39,11 @@
             {
 
                 //Czy nic jest juz zarezerwowany
-                $rezultat = $connect->query("SELECT id_users FROM users WHERE name='$nick'");
+                $rezultat = mysqli_query($connect, "SELECT id_users FROM users WHERE name='$nick'");
                     
                 if (!$rezultat) throw new Exception($connect->error);
                 
-                $ile_takich_nickow = $rezultat->num_rows;
+                $ile_takich_nickow = mysqli_num_rows($rezultat);
                 if($ile_takich_nickow>0)
                 {
                     $wszystko_OK=false;
@@ -52,7 +52,7 @@
                 if($wszystko_OK==true)
                 {
                     // wszystko jses OK
-                    if ($connect->query("INSERT INTO users VALUES (NULL, '$nick', '$haslo_hash')"))
+                    if (mysqli_query($connect, "INSERT INTO users VALUES (NULL, '$nick', '$haslo_hash')"))
 					{
                         echo "jakoś sie udoło";
 						$_SESSION['udanarejestracja']=true;
@@ -65,7 +65,7 @@
                     
                 }
 
-                $connect->close();
+                mysqli_close($connect);
             }
         }
         catch(Exception $e)

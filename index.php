@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+	
+	// if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+	// {
+	// 	header('Location:podstrony/wydatki.php');
+	// 	exit();
+	// }
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -30,7 +41,10 @@
             <button>Zaloguj</button>
 
         </form>
-
+        <?php
+			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+            unset($_SESSION['blad']);
+		?>
         <p>Nie masz jeszcze konta?</p>
         <a href="rejestracja.html"> Zarejestruj się!</a>
 

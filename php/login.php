@@ -1,5 +1,5 @@
 <?php
-
+    // czyszczenie formularza po zalogowaniu
     session_start();
 
     if((!isset($_POST['login'])) || (!isset($_POST['password'])))
@@ -12,11 +12,11 @@
 
     require_once "db_login.php"; 
 
-    $connect = @new mysqli($host, $db_user, $db_password, $db_name);
+    $connect = @mysqli_connect($host, $db_user, $db_password, $db_name);
 
-    if($connect->connect_errno!=0)
+    if(!$connect)
     {
-        echo "Error:".$connect->connect_errno;
+        echo "Error:";
     }
     else
     {
@@ -25,14 +25,14 @@
 
         $login=htmlentities($login, ENT_QUOTES, "UTF-8");
 
-
-        if($rezultat = @$connect->query(sprintf("SELECT*FROM users WHERE name='%s'",
-        mysqli_real_escape_string($connect,$login))))
+        //zabezpieczenie
+        if($rezultat = mysqli_query($connect, sprintf("SELECT*FROM users WHERE name='%s'", mysqli_real_escape_string($connect,$login))))
         {
-            $ilu_userow=$rezultat->num_rows;
+            $ilu_userow = mysqli_num_rows($rezultat);
             if($ilu_userow>0)
             {   
-                $wiersz=$rezultat->fetch_assoc();
+
+                $wiersz = mysqli_fetch_array($rezultat);
 
                 if(password_verify($haslo, $wiersz['password_user']))
                 {
@@ -41,21 +41,23 @@
                     $_SESSION['user_id'] = $wiersz['id_users'];
 
                     unset($_SESSION['blad']);
-                    $rezultat->free_result();
-                    // header('Location:../podstrony/dodawanie.html');
+
+                    mysqli_free_result($rezultat);
+
                     header('Location:../podstrony/wydatki.php');
                 }
                 else{
-
-                    echo "test1";
+                    $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowy login lub hasło!</span>';
+                    header('Location:../index.php');
                 }
 
             }else{
-                    echo "test3";
+                $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowy login lub hasło!</span>';
+                header('Location:../index.php');
             }
         }
 
-        $connect->close();
+        mysqli_close($connect);
     }
 
    
