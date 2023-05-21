@@ -19,7 +19,7 @@ function add_cost($koszt)
         $user = $_SESSION['user_id'];
         $data = date('Y-m-d H:i:s');
         mysqli_query(polonczenie_mysql(), 'INSERT INTO dane VALUES (NULL, '.$koszt.', "'.$data.'", "jakaś wpłata 2", 11, '.$user.');') or die("Problemy z odczytem danych!");
-
+        
         unset($_SESSION['blad']);
         mysqli_close(polonczenie_mysql());
     }
@@ -93,15 +93,17 @@ function getMiesiac(){
 
 function zmianaPass($haslo1, $haslo2, $haslo3){
     
+
     $user = $_SESSION['user_id'];
     $wynik=mysqli_query(polonczenie_mysql(),'SELECT password_user FROM users WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
     $wiersz = mysqli_fetch_array($wynik);
+
     if(password_verify($haslo1, $wiersz['password_user'])){
-        if(strcasecmp($haslo2, $haslo3)){
+        if($haslo2==$haslo3){
 
             $haslo_hash = password_hash($haslo2, PASSWORD_DEFAULT);
 
-            mysqli_query(polonczenie_mysql(), 'UPDATE users SET password_user='.$haslo_hash.' WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+            mysqli_query(polonczenie_mysql(), 'UPDATE users SET password_user = "'.$haslo_hash.'" WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
             mysqli_close(polonczenie_mysql());
         }
         else

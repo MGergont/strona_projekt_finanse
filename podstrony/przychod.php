@@ -87,6 +87,7 @@ if(isset($_POST['add_cost'])){
             </form>
             <?php
 			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+                
 		    ?>
         </div>
 

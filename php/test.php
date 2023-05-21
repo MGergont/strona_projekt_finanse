@@ -3,8 +3,8 @@
 session_start();
 require_once "engine.php";
 
-if(isset($_POST['hasloBefor'])){
-    if (!empty($_POST['hasloBefor'])) {
+if(isset($_POST['hasloAfter'])){
+    if (!empty($_POST['hasloAfter'])) {
         zmianaPass($_POST['hasloAfter'], $_POST['hasloBefor1'], $_POST['hasloBefor2']);
         unset($_POST['hasloAfter']);
         unset($_POST['hasloBefor1']);
@@ -33,6 +33,8 @@ if(isset($_POST['hasloBefor'])){
         <button>Zmien</button>
         <?php
 			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+
+            unset($_SESSION['blad']);
 		?>
     </form>
 </body>
