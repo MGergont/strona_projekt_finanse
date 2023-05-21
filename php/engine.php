@@ -19,7 +19,7 @@ function add_cost($koszt)
         $user = $_SESSION['user_id'];
         $data = date('Y-m-d H:i:s');
         mysqli_query(polonczenie_mysql(), 'INSERT INTO dane VALUES (NULL, '.$koszt.', "'.$data.'", "jakaś wpłata 2", 11, '.$user.');') or die("Problemy z odczytem danych!");
-        
+
         unset($_SESSION['blad']);
         mysqli_close(polonczenie_mysql());
     }
@@ -56,21 +56,19 @@ function getSaldo(){
     return $w['SUM(kwota)'];
 }
 
-function setCoste($koszt, $kategoria){
-    
-    if($koszt > 0){
-        $koszt = $koszt * -1;
-        $data = date('Y-m-d H:i:s');
-        $user = $_SESSION['user_id'];
-        mysqli_query(polonczenie_mysql(), 'INSERT INTO dane VALUES (NULL, '.$koszt.', "'.$data.'", "jakaś notatka 5", '.$kategoria.', '.$user.');') or die("Problemy z odczytem danych!");
-        mysqli_close(polonczenie_mysql());
-    }
-    else
-    {
-        echo "błąd czy nie błąd oto jest pytanie";
-        $_SESSION['blad']='<span style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
-        header('Location:../podstrony/wydatki.php');
-    }
+function setCoste($koszt, $kategoria, $notka){
+    $user = $_SESSION['user_id'];
+        if($koszt > 0){
+            $koszt = $koszt * -1;
+            $data = date('Y-m-d H:i:s');
+            mysqli_query(polonczenie_mysql(), 'INSERT INTO dane VALUES (NULL, '.$koszt.', "'.$data.'", "'.$notka.'", '.$kategoria.', '.$user.');') or die("Problemy z odczytem danych!");
+            mysqli_close(polonczenie_mysql());
+        }
+        else
+        {
+            $_SESSION['blad']='<span style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
+            header('Location:../podstrony/wydatki.php');
+        }
 }
 
 function getUserName(){
