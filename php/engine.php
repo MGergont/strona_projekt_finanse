@@ -100,6 +100,15 @@ function getMiesiac(){
     return $tablica[$miesiac];
 }
 
+function zmianaUserName($username2){
+    $user = $_SESSION['user_id'];
+
+    mysqli_query(polonczenie_mysql(), 'UPDATE users SET name="'.$username2.'" WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+    mysqli_close(polonczenie_mysql());
+
+    
+}
+
 function zmianaPass($haslo1, $haslo2, $haslo3){
     
 

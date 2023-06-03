@@ -1,3 +1,33 @@
+<?php
+
+session_start();
+
+require_once "../php/engine.php";
+
+if(isset($_POST['hasloAfter'])){
+    if (!empty($_POST['hasloAfter'])) {
+        zmianaPass($_POST['hasloAfter'], $_POST['hasloBefor1'], $_POST['hasloBefor2']);
+        unset($_POST['hasloAfter']);
+        unset($_POST['hasloBefor1']);
+        unset($_POST['hasloBefor2']);
+      }
+      else{
+          echo "pusty";
+      }
+  }
+
+  if(isset($_POST['username1'])){
+    if (!empty($_POST['username1'])) {
+        zmianaUserName($_POST['username1']);
+        unset($_POST['username1']);
+      }
+      else{
+          echo "pusty";
+      }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -60,6 +90,23 @@
         <h2>konto</h2>
     </header>
 
+    <form action="konto.php" method="post">
+        <input type="text" name="hasloAfter">
+        <input type="text" name="hasloBefor1">
+        <input type="text" name="hasloBefor2">
+        <button>Zmien</button>
+        <?php
+			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+
+            unset($_SESSION['blad']);
+            unset($_SESSION)
+		?>
+    </form>
+
+    <form action="konto.php" method="post">
+        <input type="text" name="username1">
+        <button>Zmien</button>
+    </from>
 
     <script src="../js/script.js"></script>
 </body>
