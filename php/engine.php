@@ -65,7 +65,7 @@ function setCoste($koszt, $kategoria, $notka){
         }
         else
         {
-            $_SESSION['blad']='<span class="warning1" style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
+            $_SESSION['blad']='<span class="warning1">Wartość nie może być ujemna!</span>';
             header('Location:../podstrony/wydatki.php');
         }
 }

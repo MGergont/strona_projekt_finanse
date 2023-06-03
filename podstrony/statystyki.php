@@ -1,13 +1,3 @@
-<?php
-session_start();
-	
-if (!isset($_SESSION['zalogowany']))
-{
-    header('Location:../index.php');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -15,7 +5,7 @@ if (!isset($_SESSION['zalogowany']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HF - Wydatki</title>
+    <title>HF - Statystyki</title>
 
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 
@@ -23,9 +13,10 @@ if (!isset($_SESSION['zalogowany']))
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../css/main.css">
 
-    <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -64,12 +55,11 @@ if (!isset($_SESSION['zalogowany']))
         </section>
     </section>
 
+
     <header class="title">
-        <h2>raport</h2>
+        <h2>statystyki</h2>
     </header>
 
-    <section class="">
-    </section>
 
     <script src="../js/script.js"></script>
 </body>
