@@ -2,7 +2,7 @@
 session_start();
 
 require_once "../php/engine.php";
-	
+
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.php');
@@ -27,9 +27,10 @@ if (!isset($_SESSION['zalogowany']))
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../css/main.css">
 
-    <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,22 +46,19 @@ if (!isset($_SESSION['zalogowany']))
 
         <nav>
             <ul>
-                <li><a href="wydatki.php">Wydatek</a></li>
-                <li><a href="przychod.php">Przychód</a></li>
-                <li><a href="raport.php">Raport</a></li>
+                <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
+                <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
+                <li><a href="raport.php"> <i class="fa-solid fa-receipt"></i>Raport</a></li>
             </ul>
         </nav>
 
         <section class="settings">
 
-            <div class="weatherApp">
+            <div class="userImg">
+                <img src="" alt="">
             </div>
 
-            <div class="theme">
-                <i class="fa-solid fa-sun"></i>
-                <i class="fa-solid fa-moon"></i>
-                <a href="../php/logout.php">Wyloguj</a>
-            </div>
+            <a href="../php/logout.php">wyloguj</a>
 
         </section>
     </section>
@@ -70,8 +68,8 @@ if (!isset($_SESSION['zalogowany']))
         <p></p>
         <i class="modal_icon"></i>
         <form action="../php/wydatki_rejestr.php" method="post">
-            <input type="number" placeholder="KWOTA">
-            <input type="text" name="notka" placeholder="KWOTA">
+            <input type="number" placeholder="Kwota">
+            <input type="text" name="notka" placeholder="Notatka">
             <!-- input typu text z name 1t, 2t, 3t,... do notatki -->
             <button>Dodaj</button>
         </form>
@@ -103,12 +101,7 @@ if (!isset($_SESSION['zalogowany']))
             <p id = "5">Prezenty</p>
         </div>
         <div class="kwota">
-            <p><?php echo getSaldo(); ?> <span>PLN</span> </p>
-            <?php
-			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
-
-                unset($_SESSION['blad']);
-		    ?>
+            <p> <span>PLN</span> </p>
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>

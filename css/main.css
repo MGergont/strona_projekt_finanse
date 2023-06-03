@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #FFFBFE;
 }
 
 .burger {
@@ -37,19 +38,20 @@ body {
     align-items: center;
     transition: .3s;
     height: 100vh;
-    width: 100%;
+    width: 240px;
     top: 0;
-    right: -100%;
-    background-color: rgba(255, 255, 255, .7);
+    left: -100%;
+    background-color: rgba(231, 224, 236, .8);
+    /* background-color: rgba(255, 255, 255, .7); */
     backdrop-filter: blur(5px);
 }
 
 .fixed.on {
-    right: 0;
+    left: 0;
 }
 
 .fixed .logo {
-    padding: 80px 20px 20px;
+    padding: 30px 10px 10px;
 }
 
 .fixed .logo img {
@@ -71,50 +73,37 @@ body {
     text-align: center;
 }
 
-/* .fixed nav ul li:hover a {
-    border-bottom: 1px solid black;
-} */
-
 .fixed nav ul li a {
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 5px 10px;
+    padding: 10px 30px;
     font-size: 18px;
     color: black;
-
 }
 
 .fixed .settings {
     display: flex;
     width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: 30px;
 }
 
-.fixed .settings .weatherApp {
-    background-color: royalblue;
+.fixed .settings .userImg {
+    width: 100px;
     height: 100px;
-    width: 50%;
+    background-color: red;
 }
 
-.fixed .settings .theme {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.fixed .settings .theme i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-.fixed .settings .theme a {
-    text-align: center;
-    flex-grow: 1;
+.fixed .settings a {
+    text-transform: uppercase;
+    padding: 5px 15px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    color: #524180;
 }
 
 /* --------- HEADER ------------ */
@@ -135,7 +124,7 @@ body {
 .wydatki {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 20px 15px;
+    padding: 0 10px 10px;
     flex-grow: 1;
 }
 
@@ -144,17 +133,49 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 33.333%;
-    padding: 5px;
+    width: 30%;
     flex-grow: 1;
+    background-color: #FFD8E4;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .wydatki .kwota {
+    background-color: transparent;
     width: 100%;
+    border-bottom: 2px solid;
+    border-radius: 0;
 }
 
 .wydatki .kwota p {
     font-size: 28px;
+}
+
+@keyframes warning {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        opacity: 1;
+    }
+
+    15%,
+    35%,
+    55%,
+    75%,
+    95% {
+        opacity: 0;
+    }
+}
+
+.warning2 {
+    color: #cc1b1b;
+    animation-name: warning;
+    animation-duration: 3s;
 }
 
 .wydatki div i {
@@ -166,7 +187,6 @@ body {
     text-align: center;
     font-size: 16px;
 }
-
 
 /* ------------ MODAL WYDATKI -------------- */
 
@@ -207,11 +227,11 @@ body {
 .modal form input {
     padding: 5px;
     font-size: 16px;
-
+    margin-bottom: 10px;
 }
 
 .modal form button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 25px;
     background-color: #524180;
     color: white;
@@ -225,6 +245,11 @@ body {
 /* ------------ WYDATKI_MEDIA_Q -------------- */
 
 @media screen and (min-width: 411px) {
+
+    .fixed {
+        width: 300px;
+    }
+
     .title {
         padding: 30px 30px 15px;
     }
@@ -251,6 +276,15 @@ body {
 }
 
 @media screen and (min-width: 533px) {
+
+    .fixed {
+        width: 350px;
+    }
+
+    .fixed .logo {
+        padding: 30px 20px 20px;
+    }
+
     .title {
         padding: 15px 30px;
     }
@@ -265,16 +299,21 @@ body {
         font-size: 30px;
     }
 
+    .modal .fa-xmark {
+        top: 10%;
+        right: 18%;
+    }
+
     .wydatki {
         padding: 0 10px 10px;
     }
 
     .wydatki div {
-        width: 25%;
+        width: 22%;
     }
 
     .wydatki .kwota {
-        width: 50%;
+        width: 45%;
     }
 
     .wydatki .kwota p {
@@ -293,11 +332,11 @@ body {
 
 @media screen and (min-width: 640px) {
     .title {
-        padding: 20px 30px 15px;
+        padding: 20px 30px 10px;
     }
 
     .title h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .burger {
@@ -310,6 +349,10 @@ body {
 
     .fixed {
         overflow-y: auto;
+    }
+
+    .fixed nav ul li a {
+        font-size: 22px;
     }
 
     .title {
@@ -330,6 +373,10 @@ body {
         padding: 20px;
     }
 
+    .wydatki div {
+        margin: 20px 10px;
+    }
+
     .wydatki .kwota p {
         font-size: 50px;
     }
@@ -345,7 +392,7 @@ body {
     .modal .fa-xmark {
         font-size: 46px;
         top: 26%;
-        right: 20%;
+        right: 15%;
     }
 
     .modal p {
@@ -367,6 +414,11 @@ body {
         margin-top: 30px;
         padding: 10px 40px;
         font-size: 26px;
+    }
+
+    .warning1 {
+        margin-top: 10px;
+        font-size: 24px;
     }
 
 }
@@ -395,22 +447,28 @@ body {
         padding: 40px 20px 20px;
     }
 
-
     .fixed nav ul li {
         padding: 15px;
     }
 
-    /* .fixed nav ul li:hover a {} */
-
     .fixed nav ul li a {
-        padding: 10px 30px;
+        padding: 10px 50px;
         font-size: 22px
+    }
+
+    .fixed .settings .userImg {
+        width: 140px;
+        height: 140px;
+    }
+
+    .fixed .settings a {
+        font-size: 18px;
     }
 
     /* --------- HEADER ------------ */
 
     .title {
-        padding: 50px 0 20px 50px;
+        padding: 50px 0 20px 100px;
     }
 
     .title h2 {
@@ -424,7 +482,7 @@ body {
     }
 
     .wydatki div {
-        width: 25%;
+        width: 20%;
         padding: 20px;
     }
 
@@ -433,7 +491,7 @@ body {
     }
 
     .wydatki .kwota p {
-        font-size: 60px;
+        font-size: 55px;
     }
 
     .wydatki div i {
@@ -447,10 +505,21 @@ body {
 
     /* ------------ MODAL WYDATKI -------------- */
 
+    .modal {
+        position: absolute;
+        height: 65vh;
+        width: 60%;
+        top: 50%;
+        left: calc(50% + 350px/2);
+        transform: translate(-50%, -50%);
+        background-color: rgba(172, 172, 172, 0.7);
+        border-radius: 30px;
+    }
+
     .modal .fa-xmark {
         font-size: 40px;
-        top: 25%;
-        right: 25%;
+        top: 8%;
+        right: 5%;
     }
 
     .modal p {
@@ -496,7 +565,7 @@ body {
     /* --------- HEADER ------------ */
 
     .title {
-        padding: 60px 30px 20px 80px;
+        padding: 60px 30px 20px 140px;
     }
 
     .title h2 {
@@ -525,7 +594,8 @@ body {
     /* ------------ MODAL WYDATKI -------------- */
 
     .modal .fa-xmark {
-        right: 30%;
+        top: 10%;
+        right: 8%;
     }
 
     .modal p {
@@ -546,14 +616,15 @@ body {
 .dodajPrzychod {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 20px;
     border-bottom: 2px solid;
 }
 
 .dodajPrzychod p {
     text-transform: capitalize;
-    margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .dodajPrzychod form {
@@ -563,14 +634,15 @@ body {
 }
 
 .dodajPrzychod form input:nth-of-type(1) {
-    align-self: flex-start;
-    padding: 3px 5px;
+    padding: 5px 10px;
     font-size: 16px;
-    margin-bottom: 20px;
+    text-transform: capitalize;
+    margin: 20px 0;
+    width: 180px;
 }
 
 .dodajPrzychod form input:nth-of-type(2) {
-    padding: 7px 25px;
+    padding: 8px 25px;
     border: 0px;
     border-radius: 20px;
     background-color: #524180;
@@ -578,20 +650,20 @@ body {
     font-size: 18px;
 }
 
-.wyswietlPrzychod {
-    padding: 20px 20px 10px;
+.listaPrzychod {
+    padding: 20px;
     text-align: center;
 }
 
-.wyswietlPrzychod select {
+.listaPrzychod select {
     font-size: 16px;
-    padding: 3px 2px;
-    margin-right: 20px;
+    padding: 5px;
+    margin-right: 25px;
 }
 
-.wyswietlPrzychod input {
-    font-size: 16px;
-    padding: 5px 20px;
+.listaPrzychod input {
+    font-size: 18px;
+    padding: 8px 25px;
     border: 0px;
     border-radius: 20px;
     background-color: #524180;
@@ -599,18 +671,27 @@ body {
 }
 
 .przychod ul {
-    padding: 10px;
     list-style: none;
 }
 
 .przychod ul li {
     text-align: center;
-    padding: 10px 0;
-    border-bottom: 2px solid;
+    padding: 15px 10px;
 }
+
+
 
 /* ------------ PRZYCHODY_MEDIA_Q -------------- */
 
+@media screen and (min-width: 360px) {}
+
+@media screen and (min-width: 411px) {}
+
+@media screen and (min-width: 640px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {}
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
 

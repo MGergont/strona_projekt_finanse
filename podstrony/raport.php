@@ -41,22 +41,19 @@ if (!isset($_SESSION['zalogowany']))
 
         <nav>
             <ul>
-                <li><a href="wydatki.php">Wydatek</a></li>
-                <li><a href="przychod.php">Przychód</a></li>
+                <li><a href="wydatki.php">Wydatki</a></li>
+                <li><a href="przychod.php">Przychody</a></li>
                 <li><a href="raport.php">Raport</a></li>
             </ul>
         </nav>
 
         <section class="settings">
 
-            <div class="weatherApp">
+            <div class="userImg">
+                <img src="" alt="">
             </div>
 
-            <div class="theme">
-                <i class="fa-solid fa-sun"></i>
-                <i class="fa-solid fa-moon"></i>
-                <a href="../php/logout.php">Wyloguj</a>
-            </div>
+            <a href="../php/logout.php">wyloguj</a>
 
         </section>
     </section>
