@@ -34,13 +34,25 @@ function getList($zakres)
 {
     //poprawić zakresy
     $user = $_SESSION['user_id'];
+    //zakres daty 
+    // $data = date("Y-m-d H:i:s", strtotime("-".$zakres." days"));
 
-    $data = date("Y-m-d H:i:s", strtotime("-".$zakres." days"));
+    // $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 AND data_time > "'.$data.'";') or die("Problemy z odczytem danych!");
 
-    $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 AND data_time > "'.$data.'";') or die("Problemy z odczytem danych!");
+    $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 ORDER BY data_time DESC LIMIT '.$zakres.';') or die("Problemy z odczytem danych!");
     
     return $wynik1;
     // mysqli_close(polonczenie_mysql());
+}
+
+function getRaport($kategoria)
+{
+    $user = $_SESSION['user_id'];
+
+    $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, notatka, data_time FROM dane WHERE id_users = '.$user.' AND id_kategoria = '.$kategoria.';') or die("Problemy z odczytem danych!");
+
+    return $wynik1;
+
 }
 
 function getSaldo(){
