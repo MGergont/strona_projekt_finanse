@@ -1,6 +1,8 @@
 <?php
 session_start();
-	
+
+require_once "../php/engine.php";
+
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.php');
@@ -62,7 +64,37 @@ if (!isset($_SESSION['zalogowany']))
         <h2>raport</h2>
     </header>
 
+    <form action="raport.php" method="post" class="wyswietlRaport">
+        <select name="getRaporthtml" id="getRaporthtml">
+            <option value="1">Żywność</option>
+            <option value="2">Mieszkanie</option>
+            <option value="3">Transport</option>
+            <option value="4">Odzież i obuwie</option>
+            <option value="5">Prezenty</option>
+            <option value="6">Rozwój osobisty</option>
+            <option value="7">Zdrowie i uroda</option>
+            <option value="8">Rozrywka i hobby</option>
+            <option value="9">Technologia</option>
+            <option value="10">Inne</option>
+
+        </select>
+        <input type="submit">
+    </form>
+
     <section class="">
+        <?php
+            if(isset($_POST['getRaporthtml'])){
+                if (!empty($_POST['getRaporthtml'])) {
+                    $wynik3 = getRaport($_POST['getRaporthtml']);
+                        while($row2 = mysqli_fetch_array($wynik3)){
+                        echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
+                        }
+                    }
+                    else{
+                        echo "pusty";
+                    }
+                }
+            ?>
     </section>
 
     <script src="../js/script.js"></script>

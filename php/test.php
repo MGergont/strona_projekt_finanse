@@ -35,6 +35,9 @@ if(isset($_POST['hasloAfter'])){
 			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
 
             unset($_SESSION['blad']);
+            unset($_SESSION)
+
+
 		?>
     </form>
 </body>
