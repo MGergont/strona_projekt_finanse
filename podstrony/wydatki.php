@@ -48,17 +48,24 @@ if (!isset($_SESSION['zalogowany']))
             <ul>
                 <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
                 <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
-                <li><a href="raport.php"> <i class="fa-solid fa-receipt"></i>Raport</a></li>
+                <li><a href="raport.php"> <i class="fa-solid fa-wallet"></i>Raport</a></li>
+                <li><a href="statystyki.php"> <i class="fa-solid fa-chart-simple"></i>Statystyki</a></li>
+                <li><a href="konto.php"> <i class="fa-solid fa-user"></i>Konto</a></li>
+
             </ul>
         </nav>
 
         <section class="settings">
 
             <div class="userImg">
-                <img src="" alt="">
+                <img src="../img/user.png" alt="">
+                <p class="userName">Marek Stanisławczyk</p>
             </div>
 
-            <a href="../php/logout.php">wyloguj</a>
+
+            <div class="logOut">
+                <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
+            </div>
 
         </section>
     </section>
@@ -101,7 +108,12 @@ if (!isset($_SESSION['zalogowany']))
             <p id = "5">Prezenty</p>
         </div>
         <div class="kwota">
-            <p> <span>PLN</span> </p>
+
+            <p><?php echo getSaldo(); ?> <span>PLN</span></p><?php
+			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+                unset($_SESSION['blad']);
+		    ?>
+
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>

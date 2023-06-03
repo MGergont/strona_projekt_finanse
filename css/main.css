@@ -35,7 +35,7 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     transition: .3s;
     height: 100vh;
     width: 240px;
@@ -59,7 +59,6 @@ body {
 }
 
 .fixed nav {
-    width: 100%;
     flex-grow: 1;
 }
 
@@ -68,9 +67,8 @@ body {
 }
 
 .fixed nav ul li {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+    margin: 30px 0 30px 20px;
+    /* padding: 10px 0; */
 }
 
 .fixed nav ul li a {
@@ -78,33 +76,81 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 10px 30px;
+    padding: 5px 10px;
     font-size: 18px;
     color: black;
 }
 
+.fixed nav ul li a i {
+    margin-right: 20px;
+}
+
 .fixed .settings {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
-    align-items: flex-end;
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
     padding: 10px;
     margin-top: 30px;
 }
 
 .fixed .settings .userImg {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
-.fixed .settings a {
+.fixed .settings .userImg img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.fixed .settings .userImg p {
+    margin-left: 20px;
+}
+
+.fixed .logOut {
+    border-top: 2px solid black;
+    padding: 10px 10px 0;
+}
+
+
+.fixed .logOut a {
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
     text-transform: uppercase;
-    padding: 5px 15px;
-    margin: 0 10px 10px 0;
+}
+
+.fixed .logOut a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+/* .fixed .settings a {
+    padding: 5px;
+    margin: 20px 5px 10px;
     text-decoration: none;
     color: #524180;
+    width: 50%;
 }
+
+.fixed .settings a i {
+    margin-right: 15px;
+}
+
+
+.fixed .settings a i {
+    font-size: 22px;
+} */
 
 /* --------- HEADER ------------ */
 
@@ -172,7 +218,7 @@ body {
     }
 }
 
-.warning2 {
+.warning1 {
     color: #cc1b1b;
     animation-name: warning;
     animation-duration: 3s;
@@ -248,6 +294,15 @@ body {
 
     .fixed {
         width: 300px;
+    }
+
+    .fixed nav ul li a {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .fixed nav ul li a i {
+        margin-right: 20px;
     }
 
     .title {
@@ -351,6 +406,10 @@ body {
         overflow-y: auto;
     }
 
+    .fixed nav ul li {
+        margin: 30px;
+    }
+
     .fixed nav ul li a {
         font-size: 22px;
     }
@@ -439,26 +498,30 @@ body {
         top: 0;
         left: 0;
         width: 350px;
-        background-color: rgba(172, 172, 172, 0.7);
-        backdrop-filter: blur(5px);
+        background-color: rgba(231, 224, 236, .9);
     }
 
     .fixed .logo {
         padding: 40px 20px 20px;
     }
 
-    .fixed nav ul li {
-        padding: 15px;
+    .fixed nav ul li a {
+        font-size: 24px;
     }
 
-    .fixed nav ul li a {
-        padding: 10px 50px;
-        font-size: 22px
+    .fixed nav ul li a i {
+        margin-right: 25px;
+        transition: .3s;
+    }
+
+    .fixed nav ul li a:hover i {
+        margin-right: 60px;
     }
 
     .fixed .settings .userImg {
-        width: 140px;
-        height: 140px;
+        margin: 10px;
+        width: 100px;
+        height: 100px;
     }
 
     .fixed .settings a {

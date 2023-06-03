@@ -53,19 +53,25 @@ if(isset($_POST['add_cost'])){
 
         <nav>
             <ul>
-                <li><a href="wydatki.php">Wydatki</a></li>
-                <li><a href="przychod.php">Przychody</a></li>
-                <li><a href="raport.php">Raport</a></li>
+                <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
+                <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
+                <li><a href="raport.php"> <i class="fa-solid fa-wallet"></i>Raport</a></li>
+                <li><a href="statystyki.php"> <i class="fa-solid fa-chart-simple"></i>Statystyki</a></li>
+                <li><a href="konto.php"> <i class="fa-solid fa-user"></i>Konto</a></li>
             </ul>
         </nav>
 
         <section class="settings">
 
             <div class="userImg">
-                <img src="" alt="">
+                <img src="../img/user.png" alt="">
+                <p class="userName">Marek Stanisławczyk</p>
             </div>
 
-            <a href="../php/logout.php">wyloguj</a>
+
+            <div class="logOut">
+                <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
+            </div>
 
         </section>
     </section>
