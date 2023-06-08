@@ -72,7 +72,9 @@ if (!isset($_SESSION['zalogowany']))
     <header class="title">
         <h2>statystyki</h2>
     </header>
-
+    <?php
+        statystyki(2);
+    ?>
 
     <script src="../js/script.js"></script>
 </body>

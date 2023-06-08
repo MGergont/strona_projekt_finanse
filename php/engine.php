@@ -48,9 +48,7 @@ function getList($zakres)
 function getRaport($kategoria)
 {
     $user = $_SESSION['user_id'];
-
     $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, notatka, data_time FROM dane WHERE id_users = '.$user.' AND id_kategoria = '.$kategoria.';') or die("Problemy z odczytem danych!");
-
     return $wynik1;
 
 }
@@ -102,11 +100,15 @@ function getMiesiac(){
 
 function zmianaUserName($username2){
     $user = $_SESSION['user_id'];
-
     mysqli_query(polonczenie_mysql(), 'UPDATE users SET name="'.$username2.'" WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
     mysqli_close(polonczenie_mysql());
+}
 
-    
+function usuwanieKonta(){
+    $user = $_SESSION['user_id'];
+    mysqli_query(polonczenie_mysql(), 'DELETE FROM dane WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+    mysqli_query(polonczenie_mysql(), 'DELETE FROM users WHERE id_users = '.$user.';') or die("Problemy z odczytem danych!");
+    mysqli_close(polonczenie_mysql());
 }
 
 function zmianaPass($haslo1, $haslo2, $haslo3){
@@ -138,5 +140,26 @@ function zmianaPass($haslo1, $haslo2, $haslo3){
 
 }
 
+function generowanieRaport(){
+
+}
+
+function statystyki($zakres){
+    $user = $_SESSION['user_id'];
+    $data3 = date("Y-m");
+    $data = date("Y-m", strtotime("-".$zakres." month"));
+    $data1 = $data3."-01 00:00:00";
+    $data2 = $data."-01 00:00:00";
+    //data_time > "'.$data.'";'
+    // $data = date("Y-m-d H:i:s", strtotime("-".$zakres." days"));
+    // SELECT * FROM dane INNER JOIN kategoria on dane.id_kategoria=kategoria.id_kategoria WHERE id_users=1;
+    // SELECT SUM(kwota), id_kategoria FROM (SELECT kwota, id_kategoria FROM dane WHERE id_kategoria!=11 AND id_users = 2 AND data_time > '2023-05-01 00:00:00' AND data_time < '2023-06-01 00:00:00') AS test GROUP BY id_kategoria;
+
+
+
+    //SELECT SUM(kwota) AS suma_kwota, nazwa_kat FROM (SELECT kwota, kategoria.nazwa_kat FROM dane INNER JOIN kategoria ON dane.id_kategoria=kategoria.id_kategoria WHERE dane.id_kategoria!=11 AND dane.id_users = 2 AND data_time > '2023-05-01 00:00:00' AND data_time < '2023-06-01 00:00:00') AS test GROUP BY nazwa_kat;
+    echo $data1;
+    echo $data2;
+}
 ?>
 

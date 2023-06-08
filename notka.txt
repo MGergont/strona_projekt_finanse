@@ -7,3 +7,4 @@ do limitu
 limity w nowej tablicy 
 
 warning 
+usuwanie konta

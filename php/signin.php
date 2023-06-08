@@ -5,7 +5,7 @@
 
     echo $_POST['login_1'];
 
-    if (isset($_POST['login_1']))
+    if (!isset($_POST['login_1']))
 	{
 		//Udana walidacja? Załóżmy, że tak!
 		$wszystko_OK=true;
@@ -73,5 +73,10 @@
             echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o rejestrację w innym terminie!</span>';
 			echo '<br />Informacja developerska: '.$e;
         }
+    }
+    else
+    {
+        $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowe hasło!</span>';
+        header('Location:../rejestracja.html');
     }
 ?>
