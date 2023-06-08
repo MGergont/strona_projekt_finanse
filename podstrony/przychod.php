@@ -2,7 +2,7 @@
 session_start();
 
 require_once "../php/engine.php";
-	
+
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location:../index.php');
@@ -27,7 +27,7 @@ if(isset($_POST['add_cost'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HF - Wydatki</title>
+    <title>HF - Przychód</title>
 
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 
@@ -35,9 +35,11 @@ if(isset($_POST['add_cost'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/main.css">
-
     <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/przychod.css">
+
 </head>
 
 <body>
@@ -68,7 +70,6 @@ if(isset($_POST['add_cost'])){
                 <p class="userName">Marek Stanisławczyk</p>
             </div>
 
-
             <div class="logOut">
                 <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
             </div>
@@ -90,7 +91,6 @@ if(isset($_POST['add_cost'])){
             </form>
             <?php
 			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
-                
 		    ?>
         </div>
 

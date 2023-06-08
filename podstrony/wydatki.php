@@ -11,7 +11,6 @@ if (!isset($_SESSION['zalogowany']))
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -30,6 +29,7 @@ if (!isset($_SESSION['zalogowany']))
     <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/wydatki.css">
 
 </head>
 
@@ -46,12 +46,11 @@ if (!isset($_SESSION['zalogowany']))
 
         <nav>
             <ul>
-                <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
+                <li><a href="wydatki.php"> <i class="fa-solid fa-coins"></i> Wydatki</a></li>
                 <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
                 <li><a href="raport.php"> <i class="fa-solid fa-wallet"></i>Raport</a></li>
                 <li><a href="statystyki.php"> <i class="fa-solid fa-chart-simple"></i>Statystyki</a></li>
                 <li><a href="konto.php"> <i class="fa-solid fa-user"></i>Konto</a></li>
-
             </ul>
         </nav>
 
@@ -61,7 +60,6 @@ if (!isset($_SESSION['zalogowany']))
                 <img src="../img/user.png" alt="">
                 <p class="userName">Marek Stanisławczyk</p>
             </div>
-
 
             <div class="logOut">
                 <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
@@ -75,9 +73,8 @@ if (!isset($_SESSION['zalogowany']))
         <p></p>
         <i class="modal_icon"></i>
         <form action="../php/wydatki_rejestr.php" method="post">
-            <input type="number" placeholder="Kwota">
+            <input type="number" placeholder="Kwota" step="0.01">
             <input type="text" name="notka" placeholder="Notatka">
-            <!-- input typu text z name 1t, 2t, 3t,... do notatki -->
             <button>Dodaj</button>
         </form>
     </div>
@@ -138,6 +135,7 @@ if (!isset($_SESSION['zalogowany']))
     </section>
 
     <script src="../js/script.js"></script>
+    <script src="../js/wydatki.js"></script>
 </body>
 
 </html>

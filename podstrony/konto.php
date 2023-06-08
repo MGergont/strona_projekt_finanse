@@ -46,6 +46,7 @@ if(isset($_POST['hasloAfter'])){
     <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/konto.css">
 
 </head>
 
@@ -77,7 +78,6 @@ if(isset($_POST['hasloAfter'])){
                 <p class="userName">Marek Stanisławczyk</p>
             </div>
 
-
             <div class="logOut">
                 <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
             </div>
@@ -85,28 +85,52 @@ if(isset($_POST['hasloAfter'])){
         </section>
     </section>
 
-
     <header class="title">
         <h2>konto</h2>
     </header>
 
-    <form action="konto.php" method="post">
-        <input type="text" name="hasloAfter">
-        <input type="text" name="hasloBefor1">
-        <input type="text" name="hasloBefor2">
-        <button>Zmien</button>
-        <?php
-			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+    <div class="wrap">
 
-            unset($_SESSION['blad']);
-            unset($_SESSION)
-		?>
-    </form>
+        <p class="TitleSetting">Hasło</p>
 
-    <form action="konto.php" method="post">
-        <input type="text" name="username1">
-        <button>Zmien</button>
-    </from>
+        <form action="konto.php" method="post" class="changePassword">
+            <i class="fa-solid fa-unlock"></i> <input type="text" name="hasloAfter" placeholder="Aktualne hasło"> <br>
+            <i class="fa-solid fa-lock"></i> <input type="text" name="hasloBefor1" placeholder="Nowe hasło"> <br>
+            <i class="fa-solid fa-lock"></i> <input type="text" name="hasloBefor2" placeholder="Powtórz hasło">
+            <button>Zmień</button>
+            <?php
+			    if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+
+                unset($_SESSION['blad']);
+                unset($_SESSION)
+		    ?>
+        </form>
+
+    </div>
+
+    <div class="wrap">
+
+        <p class="TitleSetting">Nazwa Użytkownika</p>
+
+        <form action="konto.php" method="post" class="changeUsername">
+            <i class="fa-solid fa-user"></i><input type="text" name="username1" placeholder="Nazwa użytkowinka">
+            <button>Zmień</button>
+        </form>
+
+    </div>
+
+    <div class="wrap">
+
+        <p class="TitleSetting">Usuwanie konta</p>
+
+        <form action="konto.php" method="post" class="deleteAccount">
+        <i class="fa-solid fa-trash"></i><input type="text" name="delete" placeholder="Hasło">
+            <button>Usuń</button>
+        </form>
+
+    </div>
+
+
 
     <script src="../js/script.js"></script>
 </body>
