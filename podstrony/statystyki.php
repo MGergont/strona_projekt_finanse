@@ -29,6 +29,7 @@ if (!isset($_SESSION['zalogowany']))
     <script src="https://kit.fontawesome.com/f6685ad685.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/statystyki.css">
 
 </head>
 
@@ -60,14 +61,12 @@ if (!isset($_SESSION['zalogowany']))
                 <p class="userName">Marek Stanisławczyk</p>
             </div>
 
-
             <div class="logOut">
                 <a href="../php/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Wyloguj</a>
             </div>
 
         </section>
     </section>
-
 
     <header class="title">
         <h2>statystyki</h2>

@@ -1,0 +1,333 @@
+.wydatki {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px 10px;
+    flex-grow: 1;
+}
+
+.wydatki div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    flex-grow: 1;
+    background-color: #FFD8E4;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.wydatki .kwota {
+    background-color: transparent;
+    width: 100%;
+    border: 2px solid;
+    /* border-radius: 0; */
+}
+
+.wydatki .kwota p {
+    font-size: 28px;
+}
+
+@keyframes warning {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        opacity: 1;
+    }
+
+    15%,
+    35%,
+    55%,
+    75%,
+    95% {
+        opacity: 0;
+    }
+}
+
+.warning1 {
+    color: #cc1b1b;
+    animation-name: warning;
+    animation-duration: 3s;
+}
+
+.wydatki div i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.wydatki div p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(5px);
+}
+
+.modal .fa-xmark {
+    position: absolute;
+    font-size: 34px;
+    top: 20%;
+    right: 15%;
+}
+
+.modal p {
+    font-size: 32px;
+}
+
+.modal .modal_icon {
+    font-size: 36px;
+    padding: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal form input {
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.modal form button {
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: #524180;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+}
+
+
+@media screen and (min-width: 411px) {
+
+    .wydatki .kwota p {
+        font-size: 38px;
+    }
+
+    .wydatki div i {
+        font-size: 28px;
+    }
+
+    .wydatki div p {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (min-width: 533px) {
+
+    .modal .fa-xmark {
+        top: 10%;
+        right: 18%;
+    }
+
+    .wydatki {
+        padding: 0 10px 10px;
+    }
+
+    .wydatki div {
+        width: 22%;
+    }
+
+    .wydatki .kwota {
+        width: 45%;
+    }
+
+    .wydatki .kwota p {
+        font-size: 36px;
+    }
+
+    .wydatki div i {
+        font-size: 26px;
+    }
+
+    .wydatki div p {
+        font-size: 17px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .wydatki {
+        padding: 20px;
+    }
+
+    .wydatki div {
+        margin: 20px 10px;
+    }
+
+    .wydatki .kwota p {
+        font-size: 50px;
+    }
+
+    .wydatki div i {
+        font-size: 40px;
+    }
+
+    .wydatki div p {
+        font-size: 24px;
+    }
+
+    .modal .fa-xmark {
+        font-size: 46px;
+        top: 26%;
+        right: 15%;
+    }
+
+    .modal p {
+        font-size: 54px;
+    }
+
+    .modal .modal_icon {
+        font-size: 50px;
+        padding: 40px;
+    }
+
+    .modal form input {
+        padding: 8px;
+        font-size: 22px;
+
+    }
+
+    .modal form button {
+        margin-top: 30px;
+        padding: 10px 40px;
+        font-size: 26px;
+    }
+
+    .warning1 {
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+}
+
+
+@media screen and (min-width: 1366px) {
+
+    .wydatki {
+        padding: 0 20px 20px 20px;
+    }
+
+    .wydatki div {
+        width: 20%;
+        padding: 20px;
+    }
+
+    .wydatki .kwota {
+        width: 50%;
+    }
+
+    .wydatki .kwota p {
+        font-size: 55px;
+    }
+
+    .wydatki div i {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .wydatki div p {
+        font-size: 26px;
+    }
+
+    .modal {
+        position: absolute;
+        height: 65vh;
+        width: 65%;
+        top: 50%;
+        left: calc(50% + 350px/2);
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid;
+        border-radius: 20px;
+    }
+
+    .modal .fa-xmark {
+        font-size: 40px;
+        top: 8%;
+        right: 5%;
+    }
+
+    .modal p {
+        font-size: 60px;
+    }
+
+    .modal .modal_icon {
+        font-size: 50px;
+        padding: 40px;
+    }
+
+    .modal form input {
+        padding: 10px;
+        font-size: 22px;
+
+    }
+
+    .modal form button {
+        margin-top: 30px;
+        padding: 12px 40px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .wydatki {
+        padding: 0 20px 20px 20px;
+    }
+
+    .wydatki .kwota p {
+        font-size: 65px;
+    }
+
+    .wydatki div i {
+        font-size: 46px;
+        margin-bottom: 20px;
+    }
+
+    .wydatki div p {
+        font-size: 30px;
+    }
+
+    .modal {
+        left: calc(50% + 400px/2);
+    }
+
+    .modal .fa-xmark {
+        top: 10%;
+        right: 8%;
+    }
+
+    .modal p {
+        font-size: 70px;
+    }
+
+    .modal .modal_icon {
+        font-size: 60px;
+    }
+}
+
+/* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
+
+/* ew. 533px */

@@ -1,7 +1,4 @@
-/*
-#524180
-font-family: 'Roboto', sans-serif;
-*/
+/* --------- OGÓŁ / NAWIGACJA ------- */
 
 * {
     margin: 0;
@@ -67,7 +64,7 @@ body {
 }
 
 .fixed nav ul li {
-    margin: 30px 0 30px 20px;
+    margin: 20px;
     /* padding: 10px 0; */
 }
 
@@ -119,7 +116,6 @@ body {
     padding: 10px 10px 0;
 }
 
-
 .fixed .logOut a {
     display: inline-block;
     padding: 5px;
@@ -132,25 +128,12 @@ body {
 .fixed .logOut a i {
     font-size: 20px;
     margin-right: 10px;
+    transition: .3s;
 }
 
-
-/* .fixed .settings a {
-    padding: 5px;
-    margin: 20px 5px 10px;
-    text-decoration: none;
-    color: #524180;
-    width: 50%;
+.fixed .logOut a:hover i {
+    margin-right: 30px;
 }
-
-.fixed .settings a i {
-    margin-right: 15px;
-}
-
-
-.fixed .settings a i {
-    font-size: 22px;
-} */
 
 /* --------- HEADER ------------ */
 
@@ -164,129 +147,6 @@ body {
     font-weight: 700;
     font-size: 28px;
 }
-
-/* ------------ WYDATKI -------------- */
-
-.wydatki {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px 10px;
-    flex-grow: 1;
-}
-
-.wydatki div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    flex-grow: 1;
-    background-color: #FFD8E4;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.wydatki .kwota {
-    background-color: transparent;
-    width: 100%;
-    border-bottom: 2px solid;
-    border-radius: 0;
-}
-
-.wydatki .kwota p {
-    font-size: 28px;
-}
-
-@keyframes warning {
-
-    0%,
-    20%,
-    40%,
-    60%,
-    80%,
-    100% {
-        opacity: 1;
-    }
-
-    15%,
-    35%,
-    55%,
-    75%,
-    95% {
-        opacity: 0;
-    }
-}
-
-.warning1 {
-    color: #cc1b1b;
-    animation-name: warning;
-    animation-duration: 3s;
-}
-
-.wydatki div i {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.wydatki div p {
-    text-align: center;
-    font-size: 16px;
-}
-
-/* ------------ MODAL WYDATKI -------------- */
-
-.modal {
-    display: none;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .7);
-    backdrop-filter: blur(5px);
-}
-
-.modal .fa-xmark {
-    position: absolute;
-    font-size: 34px;
-    top: 20%;
-    right: 15%;
-}
-
-.modal p {
-    font-size: 32px;
-}
-
-.modal .modal_icon {
-    font-size: 36px;
-    padding: 20px;
-}
-
-.modal form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.modal form input {
-    padding: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.modal form button {
-    margin-top: 10px;
-    padding: 10px 25px;
-    background-color: #524180;
-    color: white;
-    text-transform: uppercase;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-}
-
 
 /* ------------ WYDATKI_MEDIA_Q -------------- */
 
@@ -317,17 +177,6 @@ body {
         font-size: 30px;
     }
 
-    .wydatki .kwota p {
-        font-size: 38px;
-    }
-
-    .wydatki div i {
-        font-size: 28px;
-    }
-
-    .wydatki div p {
-        font-size: 18px;
-    }
 }
 
 @media screen and (min-width: 533px) {
@@ -359,29 +208,6 @@ body {
         right: 18%;
     }
 
-    .wydatki {
-        padding: 0 10px 10px;
-    }
-
-    .wydatki div {
-        width: 22%;
-    }
-
-    .wydatki .kwota {
-        width: 45%;
-    }
-
-    .wydatki .kwota p {
-        font-size: 36px;
-    }
-
-    .wydatki div i {
-        font-size: 26px;
-    }
-
-    .wydatki div p {
-        font-size: 17px;
-    }
 }
 
 
@@ -428,71 +254,18 @@ body {
         font-size: 36px;
     }
 
-    .wydatki {
-        padding: 20px;
-    }
-
-    .wydatki div {
-        margin: 20px 10px;
-    }
-
-    .wydatki .kwota p {
-        font-size: 50px;
-    }
-
-    .wydatki div i {
-        font-size: 40px;
-    }
-
-    .wydatki div p {
-        font-size: 24px;
-    }
-
-    .modal .fa-xmark {
-        font-size: 46px;
-        top: 26%;
-        right: 15%;
-    }
-
-    .modal p {
-        font-size: 54px;
-    }
-
-    .modal .modal_icon {
-        font-size: 50px;
-        padding: 40px;
-    }
-
-    .modal form input {
-        padding: 8px;
-        font-size: 22px;
-
-    }
-
-    .modal form button {
-        margin-top: 30px;
-        padding: 10px 40px;
-        font-size: 26px;
-    }
-
-    .warning1 {
-        margin-top: 10px;
-        font-size: 24px;
-    }
-
 }
 
 @media screen and (min-width: 1366px) {
-
-    .burger {
-        right: -100%;
-    }
 
     body {
         padding-left: 350px;
     }
 
-    /* -------------- MENU - NAWIGACJA ----------- */
+    .burger {
+        right: -100%;
+    }
+
     .fixed {
         position: fixed;
         top: 0;
@@ -506,7 +279,7 @@ body {
     }
 
     .fixed nav ul li a {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .fixed nav ul li a i {
@@ -519,16 +292,18 @@ body {
     }
 
     .fixed .settings .userImg {
-        margin: 10px;
+        margin: 20px 10px;
         width: 100px;
         height: 100px;
     }
 
-    .fixed .settings a {
-        font-size: 18px;
+    .fixed .settings .userImg p {
+        font-size: 20px;
     }
 
-    /* --------- HEADER ------------ */
+    .fixed .settings .logOut a {
+        font-size: 20px;
+    }
 
     .title {
         padding: 50px 0 20px 100px;
@@ -538,73 +313,6 @@ body {
         font-size: 60px;
     }
 
-    /* ------------ WYDATKI -------------- */
-
-    .wydatki {
-        padding: 0 20px 20px 20px;
-    }
-
-    .wydatki div {
-        width: 20%;
-        padding: 20px;
-    }
-
-    .wydatki .kwota {
-        width: 50%;
-    }
-
-    .wydatki .kwota p {
-        font-size: 55px;
-    }
-
-    .wydatki div i {
-        font-size: 38px;
-        margin-bottom: 15px;
-    }
-
-    .wydatki div p {
-        font-size: 26px;
-    }
-
-    /* ------------ MODAL WYDATKI -------------- */
-
-    .modal {
-        position: absolute;
-        height: 65vh;
-        width: 60%;
-        top: 50%;
-        left: calc(50% + 350px/2);
-        transform: translate(-50%, -50%);
-        background-color: rgba(172, 172, 172, 0.7);
-        border-radius: 30px;
-    }
-
-    .modal .fa-xmark {
-        font-size: 40px;
-        top: 8%;
-        right: 5%;
-    }
-
-    .modal p {
-        font-size: 60px;
-    }
-
-    .modal .modal_icon {
-        font-size: 50px;
-        padding: 40px;
-    }
-
-    .modal form input {
-        padding: 10px;
-        font-size: 22px;
-
-    }
-
-    .modal form button {
-        margin-top: 30px;
-        padding: 12px 40px;
-        font-size: 22px;
-    }
 }
 
 
@@ -614,18 +322,13 @@ body {
         padding-left: 400px;
     }
 
-    /* -------------- MENU - NAWIGACJA ----------- */
     .fixed {
         width: 400px;
     }
 
-    /* .fixed nav ul li:hover a {} */
-
     .fixed nav ul li a {
-        font-size: 24px
+        font-size: 26px
     }
-
-    /* --------- HEADER ------------ */
 
     .title {
         padding: 60px 30px 20px 140px;
@@ -635,126 +338,7 @@ body {
         font-size: 70px;
     }
 
-    /* ------------ WYDATKI -------------- */
-
-    .wydatki {
-        padding: 0 20px 20px 20px;
-    }
-
-    .wydatki .kwota p {
-        font-size: 65px;
-    }
-
-    .wydatki div i {
-        font-size: 46px;
-        margin-bottom: 20px;
-    }
-
-    .wydatki div p {
-        font-size: 30px;
-    }
-
-    /* ------------ MODAL WYDATKI -------------- */
-
-    .modal .fa-xmark {
-        top: 10%;
-        right: 8%;
-    }
-
-    .modal p {
-        font-size: 70px;
-    }
-
-    .modal .modal_icon {
-        font-size: 60px;
-    }
 }
-
-/* ------------ PRZYCHODY -------------- */
-
-.przychod {
-    padding: 10px 20px 20px;
-}
-
-.dodajPrzychod {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid;
-}
-
-.dodajPrzychod p {
-    text-transform: capitalize;
-    font-size: 24px;
-}
-
-.dodajPrzychod form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dodajPrzychod form input:nth-of-type(1) {
-    padding: 5px 10px;
-    font-size: 16px;
-    text-transform: capitalize;
-    margin: 20px 0;
-    width: 180px;
-}
-
-.dodajPrzychod form input:nth-of-type(2) {
-    padding: 8px 25px;
-    border: 0px;
-    border-radius: 20px;
-    background-color: #524180;
-    color: #eee;
-    font-size: 18px;
-}
-
-.listaPrzychod {
-    padding: 20px;
-    text-align: center;
-}
-
-.listaPrzychod select {
-    font-size: 16px;
-    padding: 5px;
-    margin-right: 25px;
-}
-
-.listaPrzychod input {
-    font-size: 18px;
-    padding: 8px 25px;
-    border: 0px;
-    border-radius: 20px;
-    background-color: #524180;
-    color: #eee;
-}
-
-.przychod ul {
-    list-style: none;
-}
-
-.przychod ul li {
-    text-align: center;
-    padding: 15px 10px;
-}
-
-
-
-/* ------------ PRZYCHODY_MEDIA_Q -------------- */
-
-@media screen and (min-width: 360px) {}
-
-@media screen and (min-width: 411px) {}
-
-@media screen and (min-width: 640px) {}
-
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 1024px) {}
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
 
