@@ -80,6 +80,7 @@ if(isset($_POST['add_cost'])){
     <header class="title">
         <h2>przychody</h2>
     </header>
+
     <section class="przychod">
 
         <div class="dodajPrzychod">
@@ -101,8 +102,9 @@ if(isset($_POST['add_cost'])){
                 <option value="10">10</option>
                 <option value="15">15</option>
             </select>
-            <input type="submit">
+            <input type="submit" value="Wyświetl">
         </form>
+
         <ul>
             <?php
 

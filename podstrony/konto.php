@@ -130,8 +130,6 @@ if(isset($_POST['hasloAfter'])){
 
     </div>
 
-
-
     <script src="../js/script.js"></script>
 </body>
 

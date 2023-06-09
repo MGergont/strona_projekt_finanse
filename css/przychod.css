@@ -1,5 +1,5 @@
 .przychod {
-    padding: 10px 20px 20px;
+    padding: 10px 20px;
 }
 
 .dodajPrzychod {
@@ -8,12 +8,12 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid black;
 }
 
 .dodajPrzychod p {
     text-transform: capitalize;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .dodajPrzychod form {
@@ -31,31 +31,31 @@
 }
 
 .dodajPrzychod form input:nth-of-type(2) {
-    padding: 8px 25px;
+    padding: 7px 25px;
     border: 0px;
     border-radius: 20px;
-    background-color: #524180;
+    background-color: #6750A4;
     color: #eee;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.listaPrzychod {
-    padding: 20px;
+.wyswietlPrzychod {
+    padding: 20px 10px 10px;
     text-align: center;
 }
 
-.listaPrzychod select {
+.wyswietlPrzychod select {
     font-size: 16px;
     padding: 5px;
     margin-right: 25px;
 }
 
-.listaPrzychod input {
-    font-size: 18px;
-    padding: 8px 25px;
+.wyswietlPrzychod input {
+    font-size: 16px;
+    padding: 7px 25px;
     border: 0px;
     border-radius: 20px;
-    background-color: #524180;
+    background-color: #6750A4;
     color: #eee;
 }
 
@@ -64,21 +64,200 @@
 }
 
 .przychod ul li {
+    width: 100%;
     text-align: center;
-    padding: 15px 10px;
+    /* padding: 10px 0;
+    border-bottom: 1px solid black; */
+    padding: 15px;
+    background-color: #FFD8E4;
+    border-radius: 20px;
+    margin: 20px 0;
 }
 
-/* ------------ PRZYCHODY_MEDIA_Q -------------- */
 
-@media screen and (min-width: 360px) {}
+@media screen and (min-width: 411px) {
+    .przychod {
+        padding: 10px 30px;
+    }
 
-@media screen and (min-width: 411px) {}
+    .dodajPrzychod {
+        padding-bottom: 30px;
+    }
 
-@media screen and (min-width: 640px) {}
+    .dodajPrzychod p {
+        font-size: 30px;
+    }
 
-@media screen and (min-width: 768px) {}
+    .dodajPrzychod form input:nth-of-type(1) {
+        font-size: 18px;
+        width: 200px;
+    }
 
-@media screen and (min-width: 1024px) {}
+    .dodajPrzychod form input:nth-of-type(2) {
+        font-size: 18px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 18px;
+    }
+
+    .przychod ul li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+
+    .przychod {
+        padding: 10px 40px;
+    }
+
+    .dodajPrzychod p {
+        font-size: 34px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(2) {
+        font-size: 20px;
+    }
+
+    .wyswietlPrzychod {
+        padding: 30px 10px 10px;
+    }
+
+    .wyswietlPrzychod select {
+        font-size: 18px;
+        margin-right: 35px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 20px;
+    }
+
+    .przychod ul li {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .przychod {
+        padding: 10px 50px;
+    }
+
+    .dodajPrzychod p {
+        font-size: 40px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(2) {
+        font-size: 20px;
+    }
+
+    .wyswietlPrzychod {
+        padding: 30px 10px 10px;
+    }
+
+    .wyswietlPrzychod select {
+        font-size: 18px;
+        margin-right: 35px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 20px;
+    }
+
+    .przychod ul li {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .dodajPrzychod p {
+        font-size: 44px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(2) {
+        font-size: 22px;
+    }
+
+    .wyswietlPrzychod {
+        padding: 30px 10px 10px;
+    }
+
+    .wyswietlPrzychod select {
+        font-size: 18px;
+        margin-right: 35px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 22px;
+    }
+
+    .przychod ul li {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+
+    .dodajPrzychod {
+        padding-bottom: 40px;
+    }
+
+    .dodajPrzychod p {
+        font-size: 56px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(1) {
+        font-size: 22px;
+        width: 280px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(2) {
+        font-size: 24px;
+    }
+
+    .wyswietlPrzychod {
+        padding: 40px 10px 10px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+
+    .dodajPrzychod p {
+        font-size: 56px;
+    }
+
+    .dodajPrzychod form input:nth-of-type(1) {
+        width: 300px;
+    }
+
+    .przychod ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .przychod ul li {
+        width: 48%;
+        padding: 25px 20px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .dodajPrzychod p {
+        font-size: 62px;
+    }
+
+    .przychod ul li {
+        font-size: 24px;
+    }
+}
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
 
