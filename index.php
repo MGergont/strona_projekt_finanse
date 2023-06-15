@@ -47,7 +47,7 @@
             unset($_SESSION['blad']);
 		?>
         <p>Nie masz jeszcze konta?</p>
-        <a href="rejestracja.html"> Zarejestruj się!</a>
+        <a href="rejestracja.php"> Zarejestruj się!</a>
 
     </div>
 

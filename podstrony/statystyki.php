@@ -58,7 +58,9 @@ if (!isset($_SESSION['zalogowany']))
 
             <div class="userImg">
                 <img src="../img/user.png" alt="">
-                <p class="userName">Marek Stanisławczyk</p>
+                <?php
+                    echo '<p class="userName">'.getUserName().'</p>';
+                ?>
             </div>
 
             <div class="logOut">
@@ -71,8 +73,26 @@ if (!isset($_SESSION['zalogowany']))
     <header class="title">
         <h2>statystyki</h2>
     </header>
+    <form action="statystyki.php" method="post" class="wyswietlPrzychod">
+        <select name="getStatystykihtml" id="getListahtml">
+            <option value="1">1</option>
+            <option value="3" selected>3</option>
+            <option value="6">6</option>
+        </select>
+        <input type="submit" value="Wyświetl">
+    </form>
     <?php
-        statystyki(2);
+       if(isset($_POST['getStatystykihtml'])){
+        if (!empty($_POST['getStatystykihtml'])) {
+            $wynik3 = statystyki($_POST['getStatystykihtml']);
+            while($row2 = mysqli_fetch_array($wynik3)){
+            echo "<li>".$row2['suma_kwota']*(-1)." ".$row2['nazwa_kat']."</li>";
+            }
+        }
+        else{
+            echo "pusty";
+        }
+    }
     ?>
 
     <script src="../js/script.js"></script>

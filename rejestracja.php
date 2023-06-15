@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+	{
+		header('Location:podstrony/wydatki.php');
+		exit();
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -32,10 +43,10 @@
             <button>Rejestracja</button>
 
         </form>
-        <!-- <?php
+        <?php
 			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
             unset($_SESSION['blad']);
-		?> -->
+		?>
         <a href="index.php" class="back"><i class="fa-solid fa-arrow-left"></i></a>
 
     </div>

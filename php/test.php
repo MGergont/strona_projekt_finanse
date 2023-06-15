@@ -26,19 +26,10 @@ if(isset($_POST['hasloAfter'])){
     <title>Tstowy</title>
 </head>
 <body>
-    <form action="test.php" method="post">
-        <input type="text" name="hasloAfter">
-        <input type="text" name="hasloBefor1">
-        <input type="text" name="hasloBefor2">
-        <button>Zmien</button>
-        <?php
-			if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+    <?php
+        generowanieRaport();
+    ?>
 
-            unset($_SESSION['blad']);
-            unset($_SESSION)
-
-
-		?>
-    </form>
+    <a href="raport.txt" download="raport.txt">test</a>
 </body>
 </html>

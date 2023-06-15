@@ -4,6 +4,12 @@ session_start();
 
 require_once "../php/engine.php";
 
+if (!isset($_SESSION['zalogowany']))
+{
+    header('Location:../index.php');
+    exit();
+}
+
 if(isset($_POST['hasloAfter'])){
     if (!empty($_POST['hasloAfter'])) {
         zmianaPass($_POST['hasloAfter'], $_POST['hasloBefor1'], $_POST['hasloBefor2']);
@@ -20,6 +26,17 @@ if(isset($_POST['hasloAfter'])){
     if (!empty($_POST['username1'])) {
         zmianaUserName($_POST['username1']);
         unset($_POST['username1']);
+      }
+      else{
+          echo "pusty";
+      }
+  }
+
+  if(isset($_POST['delete'])){
+    if (!empty($_POST['delete'])) {
+        usuwanieKonta();
+        header('Location:../php/logout.php');
+        unset($_POST['delete']);
       }
       else{
           echo "pusty";
@@ -75,7 +92,9 @@ if(isset($_POST['hasloAfter'])){
 
             <div class="userImg">
                 <img src="../img/user.png" alt="">
-                <p class="userName">Marek Stanisławczyk</p>
+                <?php
+                    echo '<p class="userName">'.getUserName().'</p>';
+                ?>
             </div>
 
             <div class="logOut">

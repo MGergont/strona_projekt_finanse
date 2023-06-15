@@ -39,10 +39,9 @@ function getList($zakres)
 
     // $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 AND data_time > "'.$data.'";') or die("Problemy z odczytem danych!");
 
-    $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, data_time, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 ORDER BY data_time DESC LIMIT '.$zakres.';') or die("Problemy z odczytem danych!");
+    $wynik1 = mysqli_query(polonczenie_mysql(), 'SELECT kwota, DATE_FORMAT(data_time, "%m-%d-%Y") as test, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 ORDER BY data_time DESC LIMIT '.$zakres.';') or die("Problemy z odczytem danych!");
     
     return $wynik1;
-    // mysqli_close(polonczenie_mysql());
 }
 
 function getRaport($kategoria)
@@ -141,7 +140,14 @@ function zmianaPass($haslo1, $haslo2, $haslo3){
 }
 
 function generowanieRaport(){
+        // utworzenie uchwytu do pliku
+// tryb a umożliwia zapis na końcu pliku
+    $plik = fopen('raport.txt','a');
 
+// przypisanie zawartości do zmiennej
+    $zawartosc = "Przykładowa treść, którą umieścimy w pliku.";
+
+    fwrite($plik, $zawartosc);
 }
 
 function statystyki($zakres){
@@ -150,16 +156,13 @@ function statystyki($zakres){
     $data = date("Y-m", strtotime("-".$zakres." month"));
     $data1 = $data3."-01 00:00:00";
     $data2 = $data."-01 00:00:00";
-    //data_time > "'.$data.'";'
-    // $data = date("Y-m-d H:i:s", strtotime("-".$zakres." days"));
-    // SELECT * FROM dane INNER JOIN kategoria on dane.id_kategoria=kategoria.id_kategoria WHERE id_users=1;
-    // SELECT SUM(kwota), id_kategoria FROM (SELECT kwota, id_kategoria FROM dane WHERE id_kategoria!=11 AND id_users = 2 AND data_time > '2023-05-01 00:00:00' AND data_time < '2023-06-01 00:00:00') AS test GROUP BY id_kategoria;
+    
 
 
+    $wynik=mysqli_query(polonczenie_mysql(),'SELECT SUM(kwota) AS suma_kwota, nazwa_kat FROM (SELECT kwota, kategoria.nazwa_kat FROM dane INNER JOIN kategoria ON dane.id_kategoria=kategoria.id_kategoria WHERE dane.id_kategoria!=11 AND dane.id_users = '.$user.' AND data_time > "'.$data2.'" AND data_time < "'.$data1.'") AS test GROUP BY nazwa_kat;') or die("Problemy z odczytem danych!");
 
-    //SELECT SUM(kwota) AS suma_kwota, nazwa_kat FROM (SELECT kwota, kategoria.nazwa_kat FROM dane INNER JOIN kategoria ON dane.id_kategoria=kategoria.id_kategoria WHERE dane.id_kategoria!=11 AND dane.id_users = 2 AND data_time > '2023-05-01 00:00:00' AND data_time < '2023-06-01 00:00:00') AS test GROUP BY nazwa_kat;
-    echo $data1;
-    echo $data2;
+
+    return $wynik;
 }
 ?>
 

@@ -67,7 +67,9 @@ if(isset($_POST['add_cost'])){
 
             <div class="userImg">
                 <img src="../img/user.png" alt="">
-                <p class="userName">Marek Stanisławczyk</p>
+                <?php
+                    echo '<p class="userName">'.getUserName().'</p>';
+                ?>
             </div>
 
             <div class="logOut">
@@ -112,7 +114,7 @@ if(isset($_POST['add_cost'])){
                     if (!empty($_POST['getListahtml'])) {
                         $wynik3 = getList($_POST['getListahtml']);
                         while($row2 = mysqli_fetch_array($wynik3)){
-                        echo "<li>".$row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."</li>";
+                        echo "<li>".$row2['kwota']." ".$row2['test']." ".$row2['notatka']."</li>";
                         }
                     }
                     else{

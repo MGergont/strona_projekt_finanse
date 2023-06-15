@@ -5,7 +5,7 @@
 
     echo $_POST['login_1'];
 
-    if (!isset($_POST['login_1']))
+    if (isset($_POST['login_1']) && !empty($_POST['login_1']))
 	{
 		//Udana walidacja? Załóżmy, że tak!
 		$wszystko_OK=true;
@@ -77,6 +77,6 @@
     else
     {
         $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowe hasło!</span>';
-        header('Location:../rejestracja.html');
+        header('Location:../rejestracja.php');
     }
 ?>
