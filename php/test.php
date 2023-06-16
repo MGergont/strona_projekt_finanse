@@ -27,7 +27,7 @@ if(isset($_POST['hasloAfter'])){
 </head>
 <body>
     <?php
-        generowanieRaport();
+        
     ?>
 
     <a href="raport.txt" download="raport.txt">test</a>

@@ -57,7 +57,9 @@ if (!isset($_SESSION['zalogowany']))
 
             <div class="userImg">
                 <img src="../img/user.png" alt="">
-                <p class="userName">Marek Stanisławczyk</p>
+                <?php
+                    echo '<p class="userName">'.getUserName().'</p>';
+                ?>
             </div>
 
             <div class="logOut">
@@ -93,14 +95,18 @@ if (!isset($_SESSION['zalogowany']))
             if(isset($_POST['getRaporthtml'])){
                 if (!empty($_POST['getRaporthtml'])) {
                     $wynik3 = getRaport($_POST['getRaporthtml']);
-                        while($row2 = mysqli_fetch_array($wynik3)){
+                    $wynik2 = $wynik3;
+                    while($row2 = mysqli_fetch_array($wynik3)){
                         echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
-                        }
+                    }
+                    echo generowanieRaport($wynik2);
+                     
                     }
                     else{
                         echo "pusty";
                     }
                 }
+
             ?>
     </section>
 

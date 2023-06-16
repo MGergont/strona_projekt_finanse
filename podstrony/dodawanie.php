@@ -29,6 +29,5 @@ if (isset($_SESSION['fr_haslo1'])) unset($_SESSION['fr_haslo1']);
 <body>
     Udało się
     <a href="wydatki.php">tu kliknij</a>
-    <!--  -->
 </body>
 </html>

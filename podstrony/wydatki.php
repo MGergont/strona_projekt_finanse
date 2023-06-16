@@ -58,7 +58,9 @@ if (!isset($_SESSION['zalogowany']))
 
             <div class="userImg">
                 <img src="../img/user.png" alt="">
-                <p class="userName">Marek Stanisławczyk</p>
+                <?php
+                    echo '<p class="userName">'.getUserName().'</p>';
+                ?>
             </div>
 
             <div class="logOut">

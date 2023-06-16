@@ -86,7 +86,7 @@ if (!isset($_SESSION['zalogowany']))
         if (!empty($_POST['getStatystykihtml'])) {
             $wynik3 = statystyki($_POST['getStatystykihtml']);
             while($row2 = mysqli_fetch_array($wynik3)){
-            echo "<li>".$row2['suma_kwota']*(-1)." ".$row2['nazwa_kat']."</li>";
+            echo "<li>".$row2['suma_kwota']*(-1)." ".$row2['nazwa_kat']."  ".$row2['procent']."%</li>";
             }
         }
         else{
