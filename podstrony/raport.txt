@@ -1,33 +1,4 @@
-jakiś 0 teskt
-jakiś 1 teskt
-jakiś 2 teskt
-jakiś 3 teskt
-jakiś 4 teskt
-jakiś 0 teskt
-jakiś 1 teskt
-jakiś 2 teskt
-jakiś 3 teskt
-jakiś 4 teskt
-jakiś 0 teskt
-jakiś 1 teskt
-jakiś 2 teskt
-jakiś 3 teskt
-jakiś 4 teskt
-jakiś 0 teskt
-jakiś 1 teskt
-jakiś 2 teskt
-jakiś 3 teskt
-jakiś 4 teskt
+qwert2
+2023-06-17 13:53:26
+Koszt;   Czas;   Notatka;
 -111 2023-05-20 19:56:49 jakaś notatka 5
--111 2023-05-20 19:56:49 jakaś notatka 5
-1111 2023-05-06 16:00:26 jakiś tekst 2 user
--16666 2023-05-20 20:02:00 jakaś notatka 5
--3 2023-05-21 22:38:52 qwet
--4 2023-05-21 22:39:34 asdf
--4 2023-05-21 22:40:48 
--111 2023-05-20 19:56:49 jakaś notatka 5
-1111 2023-05-06 16:00:26 jakiś tekst 2 user
--16666 2023-05-20 20:02:00 jakaś notatka 5
--3 2023-05-21 22:38:52 qwet
--4 2023-05-21 22:39:34 asdf
--4 2023-05-21 22:40:48 

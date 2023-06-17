@@ -88,6 +88,7 @@ if (!isset($_SESSION['zalogowany']))
 
         </select>
         <input type="submit">
+        <a href="raport.txt" download="raport.txt">Pobierz raport</a>
     </form>
 
     <section class="">
@@ -95,12 +96,10 @@ if (!isset($_SESSION['zalogowany']))
             if(isset($_POST['getRaporthtml'])){
                 if (!empty($_POST['getRaporthtml'])) {
                     $wynik3 = getRaport($_POST['getRaporthtml']);
-                    $wynik2 = $wynik3;
+                    generowanieRaport($_POST['getRaporthtml']);
                     while($row2 = mysqli_fetch_array($wynik3)){
                         echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
                     }
-                    echo generowanieRaport($wynik2);
-                     
                     }
                     else{
                         echo "pusty";
