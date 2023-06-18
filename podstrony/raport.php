@@ -102,7 +102,7 @@ if (!isset($_SESSION['zalogowany']))
                     }
                     }
                     else{
-                        echo "pusty";
+                        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
                     }
                 }
 

@@ -11,11 +11,11 @@ if (!isset($_SESSION['zalogowany']))
 
 if(isset($_POST['add_cost'])){
     if (!empty($_POST['add_cost'])) {
-          add_cost($_POST['add_cost']);
-          unset($_POST['add_cost']);
+        przychodyDodawanie($_POST['add_cost'], $_POST['add_notka']);
+        unset($_POST['add_cost']);
       }
       else{
-          echo "pusty";
+        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
       }
   }
 ?>
@@ -90,6 +90,7 @@ if(isset($_POST['add_cost'])){
 
             <form action="przychod.php" method="post">
                 <input type="number" name="add_cost" placeholder="kwota">
+                <input type="text" name="add_notka" placeholder="notatka">
                 <input type="submit" value="Dodaj">
             </form>
             <?php
@@ -106,23 +107,28 @@ if(isset($_POST['add_cost'])){
             </select>
             <input type="submit" value="Wyświetl">
         </form>
-
-        <ul>
+        <table>
+            <th>kwota</th>
+            <th>data</th>
+            <th>info</th>
             <?php
-
                 if(isset($_POST['getListahtml'])){
                     if (!empty($_POST['getListahtml'])) {
-                        $wynik3 = getList($_POST['getListahtml']);
-                        while($row2 = mysqli_fetch_array($wynik3)){
-                        echo "<li>".$row2['kwota']." ".$row2['test']." ".$row2['notatka']."</li>";
+                        $wynik = listaPrzychody($_POST['getListahtml']);
+                        while($wiersz = mysqli_fetch_array($wynik)){
+                        echo "<tr>";
+                        echo "<td>".$wiersz['kwota']."</td>";
+                        echo "<td>".$wiersz['test']."</td>";
+                        echo "<td>".$wiersz['notatka']."</td>";
+                        echo "</tr>";
                         }
                     }
                     else{
-                        echo "pusty";
+                        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
                     }
                 }
             ?>
-        </ul>
+        </table>
 
     </section>
 

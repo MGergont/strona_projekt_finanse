@@ -27,7 +27,8 @@ if (isset($_SESSION['fr_haslo1'])) unset($_SESSION['fr_haslo1']);
     <title>Document</title>
 </head>
 <body>
-    Udało się
-    <a href="wydatki.php">tu kliknij</a>
+    <?php
+    header('Location:../index.php');
+    ?>
 </body>
 </html>

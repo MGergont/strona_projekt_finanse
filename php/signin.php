@@ -1,10 +1,6 @@
 <?php
     session_start();
 
-    echo "jakiś tekst prosze działaj";
-
-    echo $_POST['login_1'];
-
     if (isset($_POST['login_1']) && !empty($_POST['login_1']))
 	{
 		//Udana walidacja? Załóżmy, że tak!

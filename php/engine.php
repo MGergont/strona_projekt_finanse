@@ -13,12 +13,12 @@ function connectMysql()
     return $conn;
 }
 
-function add_cost($koszt)
+function przychodyDodawanie($kwota, $notatka)
 {
-    if($koszt > 0){
-        $user = $_SESSION['user_id'];
+    if($kwota > 0){
+        $nazwa = $_SESSION['user_id'];
         $data = date('Y-m-d H:i:s');
-        @mysqli_query(connectMysql(), 'INSERT INTO dane VALUES (NULL, '.$koszt.', "'.$data.'", "jakaś wpłata 2", 11, '.$user.');') or die("Problemy z odczytem danych!");
+        @mysqli_query(connectMysql(), 'INSERT INTO dane VALUES (NULL, '.$kwota.', "'.$data.'", "'.$notatka.'", 11, '.$nazwa.');') or die("Problemy z odczytem danych!");
 
         unset($_SESSION['blad']);
         mysqli_close(connectMysql());
@@ -30,13 +30,11 @@ function add_cost($koszt)
     }
 }
 
-function getList($zakres)
+function listaPrzychody($zakres)
 {
-    $user = $_SESSION['user_id'];
-    
-    $wynik1 = mysqli_query(connectMysql(), 'SELECT kwota, DATE_FORMAT(data_time, "%m-%d-%Y") as test, notatka FROM dane WHERE id_users = '.$user.' AND id_kategoria = 11 ORDER BY data_time DESC LIMIT '.$zakres.';') or die("Problemy z odczytem danych!");
-    
-    return $wynik1;
+    $nazwa = $_SESSION['user_id'];
+    $wynik = mysqli_query(connectMysql(), 'SELECT kwota, DATE_FORMAT(data_time, "%m-%d-%Y") as test, notatka FROM dane WHERE id_users = '.$nazwa.' AND id_kategoria = 11 ORDER BY data_time DESC LIMIT '.$zakres.';') or die("Problemy z odczytem danych!");
+    return $wynik;
 }
 
 function getRaport($kategoria)
