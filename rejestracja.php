@@ -38,7 +38,7 @@
         <form action="php/signin.php" method="post">
 
             <input type="text" name="login_1" placeholder="Username">
-            <input type="text" name="password_1" placeholder="Password">
+            <input type="password" name="password_1" placeholder="Password">
 
             <button>Rejestracja</button>
 

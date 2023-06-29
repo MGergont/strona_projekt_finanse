@@ -81,23 +81,29 @@ if (!isset($_SESSION['zalogowany']))
         </select>
         <input type="submit" value="Wyświetl">
     </form>
-    <?php
-       if(isset($_POST['getStatystykihtml'])){
+
+    <table>
+        <th>KATEGORIA</th>
+        <th>KWOTA SUMARYCZNIE</th>
+        <th>PROCENT WYDATKÓW</th>
+        <?php
+        if(isset($_POST['getStatystykihtml'])){
         if (!empty($_POST['getStatystykihtml'])) {
             $wynik3 = statystyki($_POST['getStatystykihtml']);
             while($row2 = mysqli_fetch_array($wynik3)){
-            echo "<div>";    
-            echo "<p>".$row2['suma_kwota']*(-1)."</p>";
-            echo "<p>".$row2['nazwa_kat']."</p>";
-            echo "<p>".$row2['procent']."%</p>";
-            echo "</div>";
+            echo "<tr>";
+            echo "<td>".$row2['nazwa_kat']."</td>";
+            echo "<td>".$row2['suma_kwota']*(-1)."<span> zł</span>"."</td>";
+            echo "<td>".$row2['procent']."%</td>";
+            echo "</tr>";
             }
         }
         else{
             echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
         }
-    }
-    ?>
+        }
+        ?>
+    </table>
 
     <script src="../js/script.js"></script>
 </body>

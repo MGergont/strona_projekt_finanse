@@ -108,16 +108,16 @@ if(isset($_POST['add_cost'])){
             <input type="submit" value="Wyświetl">
         </form>
         <table>
-            <th>kwota</th>
-            <th>data</th>
-            <th>info</th>
+            <th>KWOTA</th>
+            <th>DATA</th>
+            <th>NOTATKA</th>
             <?php
                 if(isset($_POST['getListahtml'])){
                     if (!empty($_POST['getListahtml'])) {
                         $wynik = listaPrzychody($_POST['getListahtml']);
                         while($wiersz = mysqli_fetch_array($wynik)){
                         echo "<tr>";
-                        echo "<td>".$wiersz['kwota']."</td>";
+                        echo "<td>".$wiersz['kwota']."<span> zł</span>"."</td>";
                         echo "<td>".$wiersz['test']."</td>";
                         echo "<td>".$wiersz['notatka']."</td>";
                         echo "</tr>";

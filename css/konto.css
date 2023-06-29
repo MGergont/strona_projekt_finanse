@@ -125,15 +125,16 @@
 
     .TitleSetting {
         padding: 10px 0 0 30px;
-        font-size: 32px;
+        font-size: 30px;
     }
 }
 
 @media screen and (min-width: 1024px) {
 
     .TitleSetting {
-        font-size: 36px;
+        font-size: 32px;
     }
+
 }
 
 
@@ -142,6 +143,9 @@
         margin: 0 100px;
     }
 }
+
+
+@media screen and (min-width: 1536pxpx) {}
 
 
 @media screen and (min-width: 1920px) {
@@ -170,11 +174,11 @@
 
 
     .TitleSetting {
-        font-size: 40px;
+        font-size: 36px;
     }
 }
 
 
-/* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */
+/* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1536 - 1920 */
 
 /* ew. 533px */

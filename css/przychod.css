@@ -22,15 +22,16 @@
     align-items: center;
 }
 
-.dodajPrzychod form input:nth-of-type(1) {
-    padding: 5px 10px;
+.dodajPrzychod form input:nth-of-type(1),
+.dodajPrzychod form input:nth-of-type(2) {
+    padding: 5px;
     font-size: 16px;
     text-transform: capitalize;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 180px;
 }
 
-.dodajPrzychod form input:nth-of-type(2) {
+.dodajPrzychod form input:nth-of-type(3) {
     padding: 7px 25px;
     border: 0px;
     border-radius: 20px;
@@ -59,19 +60,25 @@
     color: #eee;
 }
 
-.przychod ul {
-    list-style: none;
+.przychod table {
+    max-width: 1240px;
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
 }
 
-.przychod ul li {
-    width: 100%;
+.przychod table th,
+.przychod table td,
+.przychod table tr {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.przychod table th {
     text-align: center;
-    /* padding: 10px 0;
-    border-bottom: 1px solid black; */
-    padding: 15px;
-    background-color: #FFD8E4;
-    border-radius: 20px;
-    margin: 20px 0;
+    width: 33.333%;
+    background-color: rgba(231, 224, 236, .6);
+    padding: 10px;
 }
 
 
@@ -88,12 +95,13 @@
         font-size: 30px;
     }
 
-    .dodajPrzychod form input:nth-of-type(1) {
+    .dodajPrzychod form input:nth-of-type(1),
+    .dodajPrzychod form input:nth-of-type(2) {
         font-size: 18px;
         width: 200px;
     }
 
-    .dodajPrzychod form input:nth-of-type(2) {
+    .dodajPrzychod form input:nth-of-type(3) {
         font-size: 18px;
     }
 
@@ -101,9 +109,6 @@
         font-size: 18px;
     }
 
-    .przychod ul li {
-        font-size: 18px;
-    }
 }
 
 @media screen and (min-width: 640px) {
@@ -116,7 +121,7 @@
         font-size: 34px;
     }
 
-    .dodajPrzychod form input:nth-of-type(2) {
+    .dodajPrzychod form input:nth-of-type(3) {
         font-size: 20px;
     }
 
@@ -133,9 +138,10 @@
         font-size: 20px;
     }
 
-    .przychod ul li {
-        font-size: 20px;
+    .przychod table * {
+        font-size: 18px;
     }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -147,7 +153,7 @@
         font-size: 40px;
     }
 
-    .dodajPrzychod form input:nth-of-type(2) {
+    .dodajPrzychod form input:nth-of-type(3) {
         font-size: 20px;
     }
 
@@ -164,8 +170,12 @@
         font-size: 20px;
     }
 
-    .przychod ul li {
-        font-size: 20px;
+    .przychod table {
+        margin: 20px auto 10px;
+    }
+
+    .przychod table td {
+        padding: 8px 10px;
     }
 }
 
@@ -175,7 +185,7 @@
         font-size: 44px;
     }
 
-    .dodajPrzychod form input:nth-of-type(2) {
+    .dodajPrzychod form input:nth-of-type(3) {
         font-size: 22px;
     }
 
@@ -192,32 +202,33 @@
         font-size: 22px;
     }
 
-    .przychod ul li {
-        font-size: 22px;
+    .przychod table * {
+        font-size: 20px;
     }
 }
 
 @media screen and (min-width: 1366px) {
 
     .dodajPrzychod {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
 
     .dodajPrzychod p {
         font-size: 56px;
     }
 
-    .dodajPrzychod form input:nth-of-type(1) {
+    .dodajPrzychod form input:nth-of-type(1),
+    .dodajPrzychod form input:nth-of-type(2) {
         font-size: 22px;
         width: 280px;
     }
 
-    .dodajPrzychod form input:nth-of-type(2) {
+    .dodajPrzychod form input:nth-of-type(3) {
         font-size: 24px;
     }
 
     .wyswietlPrzychod {
-        padding: 40px 10px 10px;
+        padding: 30px 10px 10px;
     }
 
     .wyswietlPrzychod input {
@@ -226,26 +237,17 @@
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1536px) {
 
     .dodajPrzychod p {
         font-size: 56px;
     }
 
-    .dodajPrzychod form input:nth-of-type(1) {
+    .dodajPrzychod form input:nth-of-type(1),
+    .dodajPrzychod form input:nth-of-type(2) {
         width: 300px;
     }
 
-    .przychod ul {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .przychod ul li {
-        width: 48%;
-        padding: 25px 20px;
-    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -254,9 +256,6 @@
         font-size: 62px;
     }
 
-    .przychod ul li {
-        font-size: 24px;
-    }
 }
 
 /* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1920 */

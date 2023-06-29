@@ -85,29 +85,37 @@ if (!isset($_SESSION['zalogowany']))
             <option value="8">Rozrywka i hobby</option>
             <option value="9">Technologia</option>
             <option value="10">Inne</option>
-
         </select>
-        <input type="submit">
+
+        <input type="submit" value="Wyświetl">
         <a href="raport.txt" download="raport.txt">Pobierz raport</a>
     </form>
 
-    <section class="">
+
+    <table>
+        <th>HISTORIA</th>
+        <th>DATA</th>
+        <th>NOTATKA</th>
         <?php
             if(isset($_POST['getRaporthtml'])){
                 if (!empty($_POST['getRaporthtml'])) {
                     $wynik3 = getRaport($_POST['getRaporthtml']);
                     generowanieRaport($_POST['getRaporthtml']);
                     while($row2 = mysqli_fetch_array($wynik3)){
-                        echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
+                        echo "<tr>";
+                        echo "<td>".$row2['kwota']."<span> zł</span>"."</td>";
+                        echo "<td>".$row2['data_time']."</td>";
+                        echo "<td>".$row2['notatka']."</td>";
+                        // echo $row2['kwota']." ".$row2['data_time']." ".$row2['notatka']."<br>";
+                        echo "</tr>";
                     }
                     }
                     else{
                         echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
                     }
                 }
-
             ?>
-    </section>
+    </table>
 
     <script src="../js/script.js"></script>
 </body>

@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: transparent;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -19,10 +23,10 @@ body {
 
 .burger {
     position: fixed;
-    top: 5%;
+    top: 3.5%;
     right: 10%;
     z-index: 1;
-    font-size: 26px;
+    font-size: 24px;
     color: black;
 }
 
@@ -32,14 +36,12 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     transition: .3s;
     height: 100vh;
     width: 240px;
     top: 0;
     left: -100%;
     background-color: rgba(231, 224, 236, .8);
-    /* background-color: rgba(255, 255, 255, .7); */
     backdrop-filter: blur(5px);
 }
 
@@ -65,7 +67,6 @@ body {
 
 .fixed nav ul li {
     margin: 20px;
-    /* padding: 10px 0; */
 }
 
 .fixed nav ul li a {
@@ -86,8 +87,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* justify-content: space-between; */
-    /* align-items: flex-end; */
     padding: 10px;
     margin-top: 30px;
 }
@@ -138,7 +137,7 @@ body {
 /* --------- HEADER ------------ */
 
 .title {
-    padding: 25px 30px 15px;
+    padding: 20px 20px 15px;
 }
 
 .title h2 {
@@ -165,16 +164,13 @@ body {
         margin-right: 20px;
     }
 
-    .title {
-        padding: 30px 30px 15px;
-    }
-
     .title h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .burger {
-        font-size: 30px;
+        top: 3.5%;
+        font-size: 26px;
     }
 
 }
@@ -187,10 +183,6 @@ body {
 
     .fixed .logo {
         padding: 30px 20px 20px;
-    }
-
-    .title {
-        padding: 15px 30px;
     }
 
     .title h2 {
@@ -212,9 +204,6 @@ body {
 
 
 @media screen and (min-width: 640px) {
-    .title {
-        padding: 20px 30px 10px;
-    }
 
     .title h2 {
         font-size: 34px;
@@ -241,15 +230,15 @@ body {
     }
 
     .title {
-        padding: 50px 50px 20px;
+        padding: 40px 40px 0px;
     }
 
     .title h2 {
-        font-size: 60px;
+        font-size: 52px;
     }
 
     .burger {
-        top: 6%;
+        top: 5%;
         right: 10%;
         font-size: 36px;
     }
@@ -259,7 +248,7 @@ body {
 @media screen and (min-width: 1366px) {
 
     body {
-        padding-left: 350px;
+        padding-left: 320px;
     }
 
     .burger {
@@ -270,16 +259,16 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        width: 350px;
+        width: 320px;
         background-color: rgba(231, 224, 236, .9);
     }
 
     .fixed .logo {
-        padding: 40px 20px 20px;
+        padding: 40px 20px 10px;
     }
 
     .fixed nav ul li a {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .fixed nav ul li a i {
@@ -288,13 +277,13 @@ body {
     }
 
     .fixed nav ul li a:hover i {
-        margin-right: 60px;
+        margin-right: 50px;
     }
 
     .fixed .settings .userImg {
         margin: 20px 10px;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .fixed .settings .userImg p {
@@ -306,11 +295,11 @@ body {
     }
 
     .title {
-        padding: 50px 0 20px 100px;
+        padding: 40px 40px 10px;
     }
 
     .title h2 {
-        font-size: 60px;
+        font-size: 56px;
     }
 
 }
@@ -319,23 +308,23 @@ body {
 @media screen and (min-width: 1920px) {
 
     body {
-        padding-left: 400px;
+        padding-left: 350px;
     }
 
     .fixed {
-        width: 400px;
+        width: 350px;
     }
 
     .fixed nav ul li a {
-        font-size: 26px
+        font-size: 22px
     }
 
     .title {
-        padding: 60px 30px 20px 140px;
+        padding: 40px 30px 20px 40px;
     }
 
     .title h2 {
-        font-size: 70px;
+        font-size: 60px;
     }
 
 }

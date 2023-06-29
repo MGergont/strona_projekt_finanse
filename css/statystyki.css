@@ -1,0 +1,113 @@
+.wyswietlPrzychod {
+    text-align: center;
+}
+
+.wyswietlPrzychod select {
+    padding: 5px 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+.wyswietlPrzychod input {
+    display: inline-block;
+    padding: 7px 25px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #6750A4;
+    color: #eee;
+    font-size: 16px;
+}
+
+table {
+    width: 90%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+table th,
+table td,
+table tr {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+table th {
+    text-align: center;
+    width: 33.333%;
+    background-color: rgba(231, 224, 236, .6);
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 640px) {
+
+    .wyswietlPrzychod select {
+        font-size: 18px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 18px;
+    }
+
+    .wyswietlPrzychod a {
+        font-size: 22px;
+    }
+
+    table * {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .wyswietlPrzychod {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .wyswietlPrzychod select {
+        margin-right: 20px;
+    }
+
+    .wyswietlPrzychod input {
+        margin-right: 100px;
+    }
+
+    table {
+        margin: 20px auto 10px;
+    }
+
+    table td {
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    table * {
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (min-width: 1536px) {
+    .wyswietlPrzychod select {
+        font-size: 22px;
+    }
+
+    .wyswietlPrzychod input {
+        font-size: 22px;
+    }
+
+    .wyswietlPrzychod a {
+        font-size: 24px;
+    }
+
+    table * {
+        font-size: 20px;
+    }
+}

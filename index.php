@@ -37,7 +37,7 @@
         <form action="php/login.php" method="post">
 
             <input type="text" name="login" placeholder="Username">
-            <input type="text" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password">
 
             <button>Zaloguj</button>
 
