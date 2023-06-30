@@ -70,15 +70,18 @@ if (!isset($_SESSION['zalogowany']))
         </section>
     </section>
 
-    <div class="modal">
-        <i class="fa-solid fa-xmark"></i>
-        <p></p>
-        <i class="modal_icon"></i>
-        <form action="../php/wydatki_rejestr.php" method="post">
-            <input type="number" placeholder="Kwota" step="0.01">
-            <input type="text" name="notka" placeholder="Notatka">
-            <button>Dodaj</button>
-        </form>
+
+    <div class="wrap_modal">
+        <div class="modal">
+            <i class="fa-solid fa-xmark"></i>
+            <p></p>
+            <i class="modal_icon"></i>
+            <form action="../php/wydatki_rejestr.php" method="post">
+                <input type="number" placeholder="Kwota" step="0.01">
+                <input type="text" name="notka" placeholder="Notatka">
+                <button>Dodaj</button>
+            </form>
+        </div>
     </div>
 
     <header class="title">
@@ -88,23 +91,23 @@ if (!isset($_SESSION['zalogowany']))
     <section class="wydatki">
         <div class="category">
             <i class="fa-solid fa-utensils"></i>
-            <p id = "1">Żywność</p>
+            <p id="1">Żywność</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-house-chimney"></i>
-            <p id = "2">Mieszkanie</p>
+            <p id="2">Mieszkanie</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-car-side"></i>
-            <p id = "3">Transport</p>
+            <p id="3">Transport</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-shirt"></i>
-            <p id = "4">Odzież i obuwie</p>
+            <p id="4">Odzież i obuwie</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-gift"></i>
-            <p id = "5">Prezenty</p>
+            <p id="5">Prezenty</p>
         </div>
         <div class="kwota">
 
@@ -116,23 +119,23 @@ if (!isset($_SESSION['zalogowany']))
         </div>
         <div class="category">
             <i class="fa-solid fa-book-open"></i>
-            <p id = "6">Rozwój osobisty</p>
+            <p id="6">Rozwój osobisty</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-hand-holding-heart"></i>
-            <p id = "7">Zdrowie i uroda</p>
+            <p id="7">Zdrowie i uroda</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-puzzle-piece"></i>
-            <p id = "8">Rozrywka i hobby</p>
+            <p id="8">Rozrywka i hobby</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-microchip"></i>
-            <p id = "9">Technologia</p>
+            <p id="9">Technologia</p>
         </div>
         <div class="category">
             <i class="fa-solid fa-ellipsis"></i>
-            <p id = "10">Inne</p>
+            <p id="10">Inne</p>
         </div>
     </section>
 

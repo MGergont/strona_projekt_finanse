@@ -110,6 +110,7 @@
 }
 
 .modal form button {
+    cursor: pointer;
     margin-top: 10px;
     padding: 10px 25px;
     background-color: #6750A4;
@@ -118,6 +119,7 @@
     font-size: 16px;
     border: none;
     border-radius: 25px;
+    transition: .3s;
 }
 
 
@@ -259,22 +261,38 @@
         transform: scale(1.2);
     }
 
+    .wrap_modal {
+        position: fixed;
+        top: 0;
+        left: 320px;
+        height: 0vh;
+        width: 0%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 3;
+    }
+
     .modal {
         position: absolute;
         height: 65vh;
         width: 65%;
         top: 50%;
-        left: calc(50% + 350px/2);
+        left: calc(50% - 320px/2);
         transform: translate(-50%, -50%);
         background-color: white;
         border: 2px solid;
         border-radius: 20px;
+        z-index: 4;
     }
 
     .modal .fa-xmark {
         font-size: 40px;
         top: 8%;
         right: 5%;
+        transition: .3s;
+    }
+
+    .modal .fa-xmark:hover {
+        transform: scale(1.2);
     }
 
     .modal p {
@@ -297,6 +315,10 @@
         padding: 12px 40px;
         font-size: 22px;
     }
+
+    .modal form button:active {
+        background-color: #7359bb;
+    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -318,8 +340,12 @@
         font-size: 30px;
     }
 
+    .wrap_modal {
+        left: 350px;
+    }
+
     .modal {
-        left: calc(50% + 400px/2);
+        left: calc(50% - 350px/2);
     }
 
     .modal .fa-xmark {

@@ -48,6 +48,7 @@ div.wrap {
 }
 
 .wrap form button {
+    cursor: pointer;
     padding: 10px;
     border: 0px;
     border-radius: 20px;

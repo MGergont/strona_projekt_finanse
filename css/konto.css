@@ -22,12 +22,16 @@
 .changePassword button,
 .changeUsername button,
 .deleteAccount button {
+    cursor: pointer;
     display: block;
     padding: 5px 25px;
     border: none;
     border-radius: 20px;
     margin: 10px 0 0 35px;
+    background-color: #6750A4;
+    color: white;
     font-size: 15px;
+    transition: .3s;
 }
 
 .TitleSetting {
@@ -139,13 +143,17 @@
 
 
 @media screen and (min-width: 1366px) {
+
+    .changePassword button:active,
+    .changeUsername button:active,
+    .deleteAccount button:active {
+        background-color: #7359bb;
+    }
+
     .wrap {
         margin: 0 100px;
     }
 }
-
-
-@media screen and (min-width: 1536pxpx) {}
 
 
 @media screen and (min-width: 1920px) {
@@ -177,8 +185,3 @@
         font-size: 36px;
     }
 }
-
-
-/* width --- 320 - 360 - 411 - 768 - 1024 - 1366 - 1536 - 1920 */
-
-/* ew. 533px */
