@@ -15,7 +15,7 @@ if(isset($_POST['add_cost'])){
         unset($_POST['add_cost']);
       }
       else{
-        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
+        echo '<span id="error">Formularz jest pusty!</span>';
       }
   }
 ?>

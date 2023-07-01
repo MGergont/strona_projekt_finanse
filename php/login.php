@@ -1,4 +1,5 @@
 <?php
+
     // czyszczenie formularza po zalogowaniu
     session_start();
 
@@ -47,12 +48,12 @@
                     header('Location:../podstrony/wydatki.php');
                 }
                 else{
-                    $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowy login lub hasło!</span>';
+                    $_SESSION['blad']='<span id="error">Nieprawidłowy login lub hasło!</span>';
                     header('Location:../index.php');
                 }
 
             }else{
-                $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowy login lub hasło!</span>';
+                $_SESSION['blad']='<span id="error">Nieprawidłowy login lub hasło!</span>';
                 header('Location:../index.php');
             }
         }

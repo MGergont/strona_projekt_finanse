@@ -25,7 +25,7 @@ function przychodyDodawanie($kwota, $notatka)
     }
     else
     {
-        $_SESSION['blad']='<span class="warning2" style="color: #cc1b1b;">Wartość nie morze być ujemna!</span>';
+        $_SESSION['blad']='<span id="error">Wartość nie może być ujemna!</span>';
         header('Location:../podstrony/przychod.php');
     }
 }
@@ -83,7 +83,7 @@ function setCoste($koszt, $kategoria, $notka){
         }
         else
         {
-            $_SESSION['blad']='<span class="warning1">Wartość nie może być ujemna!</span>';
+            $_SESSION['blad']='<span id="error">Wartość nie może być ujemna!</span>';
             header('Location:../podstrony/wydatki.php');
         }
 }
@@ -135,13 +135,13 @@ function zmianaPass($haslo1, $haslo2, $haslo3){
         }
         else
         {
-            $_SESSION['blad']='<span style="color: #cc1b1b;">Hasła nie są takie same!</span>';
+            $_SESSION['blad']='<span id="error">Hasła nie są takie same!</span>';
             header('Location:../php/test.php');
         }
     }
     else
     {
-        $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowe hasło!</span>';
+        $_SESSION['blad']='<span id="error">Nieprawidłowe hasło!</span>';
         header('Location:../php/test.php');
     }
 

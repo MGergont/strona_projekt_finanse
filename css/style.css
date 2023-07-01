@@ -1,4 +1,37 @@
 /* --------- LOGOWANIE / REJESTRACJA --------- */
+@keyframes error {
+
+    0% {
+        top: -5%;
+    }
+
+    15% {
+        top: 5%;
+    }
+
+    85% {
+        top: 5%;
+    }
+
+    100% {
+        top: -5%;
+    }
+}
+
+#error {
+    text-align: center;
+    position: fixed;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(209, 21, 21);
+    animation-name: error;
+    animation-duration: 5s;
+}
 
 * {
     padding: 0;

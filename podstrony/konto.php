@@ -18,7 +18,7 @@ if(isset($_POST['hasloAfter'])){
         unset($_POST['hasloBefor2']);
       }
       else{
-        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
+        echo '<span id="error"">Formularz jest pusty!</span>';
       }
   }
 
@@ -28,7 +28,7 @@ if(isset($_POST['hasloAfter'])){
         unset($_POST['username1']);
       }
       else{
-        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
+        echo '<span id="error">Formularz jest pusty!</span>';
       }
   }
 
@@ -39,7 +39,7 @@ if(isset($_POST['hasloAfter'])){
         unset($_POST['delete']);
       }
       else{
-        echo '<span class="warning2" style="color: #cc1b1b;">Formularz jest pusty!</span>';
+        echo '<span id="error">Formularz jest pusty!</span>';
       }
   }
 

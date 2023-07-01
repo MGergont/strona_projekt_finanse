@@ -72,7 +72,7 @@
     }
     else
     {
-        $_SESSION['blad']='<span style="color: #cc1b1b;">Nieprawidłowe hasło!</span>';
+        $_SESSION['blad']='<span id="error">Nieprawidłowe dane!</span>';
         header('Location:../rejestracja.php');
     }
 ?>
