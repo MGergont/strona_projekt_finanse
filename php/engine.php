@@ -64,12 +64,12 @@ function generowanieRaport($kategoria){
 function getSaldo(){
     $user = $_SESSION['user_id'];
 
-    $suma=mysqli_query(connectMysql(),'SELECT SUM(kwota) FROM dane where id_users = '.$user.';') or die("Problemy z odczytem danych!");
+    $suma=mysqli_query(connectMysql(),'SELECT ROUND(SUM(kwota), 2) as saldo FROM dane where id_users = '.$user.';') or die("Problemy z odczytem danych!");
 
     $w=mysqli_fetch_array($suma);
 
     mysqli_close(connectMysql());
-    return $w['SUM(kwota)'];
+    return $w['saldo'];
 }
 
 

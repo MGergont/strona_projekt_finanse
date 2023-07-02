@@ -28,6 +28,7 @@ if (isset($_SESSION['fr_haslo1'])) unset($_SESSION['fr_haslo1']);
 </head>
 <body>
     <?php
+    $_SESSION['blad']='<span id="error" style="color:green;">Konto zostało utworzone!</span>';
     header('Location:../index.php');
     ?>
 </body>

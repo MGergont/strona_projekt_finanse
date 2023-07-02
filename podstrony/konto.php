@@ -54,7 +54,7 @@ if(isset($_POST['hasloAfter'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HF - Konto</title>
 
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@ if(isset($_POST['hasloAfter'])){
 
         <nav>
             <ul>
-                <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
+                <li><a href="wydatki.php"> <i class="fa-solid fa-coins"></i> Wydatki</a></li>
                 <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
                 <li><a href="raport.php"> <i class="fa-solid fa-wallet"></i>Raport</a></li>
                 <li><a href="statystyki.php"> <i class="fa-solid fa-chart-simple"></i>Statystyki</a></li>

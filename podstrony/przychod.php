@@ -29,7 +29,7 @@ if(isset($_POST['add_cost'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HF - Przychód</title>
 
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,7 @@ if(isset($_POST['add_cost'])){
 
         <nav>
             <ul>
-                <li><a href="wydatki.php"> <i class="fa-solid fa-scale-unbalanced-flip"></i> Wydatki</a></li>
+                <li><a href="wydatki.php"> <i class="fa-solid fa-coins"></i> Wydatki</a></li>
                 <li><a href="przychod.php"> <i class="fa-solid fa-piggy-bank"></i>Przychody</a></li>
                 <li><a href="raport.php"> <i class="fa-solid fa-wallet"></i>Raport</a></li>
                 <li><a href="statystyki.php"> <i class="fa-solid fa-chart-simple"></i>Statystyki</a></li>
@@ -89,7 +89,7 @@ if(isset($_POST['add_cost'])){
             <p>miesiąc: <span class="actualMonth"><?php echo getMiesiac();?></span></p>
 
             <form action="przychod.php" method="post">
-                <input type="number" name="add_cost" placeholder="kwota">
+                <input type="number" name="add_cost" placeholder="kwota" step="0.01">
                 <input type="text" name="add_notka" placeholder="notatka">
                 <input type="submit" value="Dodaj">
             </form>
@@ -100,10 +100,10 @@ if(isset($_POST['add_cost'])){
 
         <form action="przychod.php" method="post" class="wyswietlPrzychod">
             <select name="getListahtml" id="getListahtml">
-                <option value="1">1</option>
-                <option value="5" selected>5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
+                <option value="5" selected>5 ostatnich</option>
+                <option value="10">10 ostatnich</option>
+                <option value="15">15 ostatnich</option>
+                <option value="20">20 ostatnich</option>
             </select>
             <input type="submit" value="Wyświetl">
         </form>
